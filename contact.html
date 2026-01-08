@@ -1,81 +1,206 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Ahmed Harbi</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" href="logo.png">
-    <style>
-    </style>
-</head>
-<body>
-    <nav>
-        <ul>
-          <li><a href="index.html" class="name">Ahmed Harbi Elsayed</a></li>
-          <!-- <li><a href="about.html">About</a></li> -->
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li class="github-container">
-            <a href="https://github.com/ahmedharbii">
-              <img src="https://github.com/fluidicon.png" alt="Github logo" class="logo">
-            </a>
-          </li>
-          <li class="linkedin-container ">
-            <a href="https://linkedin.com/in/ahmedharbii">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png" alt="Linkedin logo" class="logo">
-            </a>
-          </li>
-          <li class="google-scholar-container">
-            <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png" alt="Google Scholar logo" class="logo">
-            </a>
-          </li>
-          <li class="twitter-container">
-            <a href="https://twitter.com/AhmedHarbii10">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter logo" class="logo">
-            </a>
-          </li>
-        </ul>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <span id="theme-icon">🌙</span>
-        </button>
-      </nav>
 
-    <div class="contact-container">
-        <div class="email-form-container">
-            <h2>Contact Me</h2>
-            <form action="mailto:ahmedharbii10@gmail.com" method="POST" enctype="text/plain">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <label for="message">Message:</label>
-                <br>
-                <textarea id="message" name="message" rows="8" required></textarea>
-                <br>
-                <input type="submit" value="Send Email">
-            </form>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <title>Ahmed Harbi</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="logo.png">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <style>
+    #model-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    #loading-indicator {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      color: var(--text-color);
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .model-container {
+      position: static;
+    }
+
+    .model-attribution {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 10px;
+      color: var(--text-color);
+      opacity: 0.5;
+      z-index: 10;
+      margin: 0;
+    }
+
+    .model-attribution a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .model-attribution a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      padding: 20px;
+    }
+
+    .email-form-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      max-width: 500px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .email-form-container *,
+    .email-form-container *:before,
+    .email-form-container *:after {
+      box-sizing: inherit;
+    }
+
+    .email-form-container input[type="text"],
+    .email-form-container input[type="email"],
+    .email-form-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      /* Darker border for light mode */
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.5);
+      /* More opaque background */
+      color: var(--text-color);
+      font-family: inherit;
+    }
+
+    [data-theme="dark"] .email-form-container {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="dark"] .email-form-container input,
+    [data-theme="dark"] .email-form-container textarea {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      /* Lighter border for dark mode */
+      color: var(--text-color);
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="name">Ahmed Harbi Elsayed</a></li>
+      <!-- <li><a href="about.html">About</a></li> -->
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li class="github-container">
+        <a href="https://github.com/ahmedharbii">
+          <img src="https://github.com/fluidicon.png" alt="Github logo" class="logo">
+        </a>
+      </li>
+      <li class="linkedin-container ">
+        <a href="https://linkedin.com/in/ahmedharbii">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
+            alt="Linkedin logo" class="logo">
+        </a>
+      </li>
+      <li class="google-scholar-container">
+        <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
+            alt="Google Scholar logo" class="logo">
+        </a>
+      </li>
+      <li class="twitter-container">
+        <a href="https://twitter.com/AhmedHarbii10">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter logo"
+            class="logo">
+        </a>
+      </li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+
+  <div class="contact-container">
+    <div class="email-form-container">
+      <h2>Contact Me</h2>
+      <form action="mailto:ahmedharbii10@gmail.com" method="POST" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="message">Message:</label>
+        <br>
+        <textarea id="message" name="message" rows="8" required></textarea>
+        <br>
+        <input type="submit" value="Send Email">
+      </form>
     </div>
+    <div class="model-container">
+      <canvas id="model-canvas"></canvas>
+      <div id="loading-indicator">Loading 3D model...<br><span id="load-progress">0%</span></div>
+      <p class="model-attribution">
+        <a href="https://skfb.ly/6SI7C" target="_blank">"Killer Whale"</a> by Trouvaille is licensed under
+        <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+      </p>
+    </div>
+  </div>
 </body>
 <footer>
-    <p>Copyright &copy; <span id="year"></span> Ahmed Harbi</p>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <p>Copyright &copy; <span id="year"></span> Ahmed Harbi</p>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="particles.js"></script>
 <script>
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
   const currentTheme = localStorage.getItem('theme') || 'light';
-  
+
   if (currentTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
     themeIcon.textContent = '☀️';
   }
-  
+
   themeToggle.addEventListener('click', () => {
     const theme = document.documentElement.getAttribute('data-theme');
     if (theme === 'dark') {
@@ -107,5 +232,182 @@
     observer.observe(el);
   });
 </script>
-</html>
+<script type="module">
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+  // Three.js 3D Model Setup
+  const canvas = document.getElementById('model-canvas');
+  const scene = new THREE.Scene();
+  scene.background = null;
+
+  // Camera
+  const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+  camera.position.set(7, 7, 7);
+  camera.lookAt(0, 0, 0);
+
+  // Renderer with transparent background
+  const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    antialias: true,
+    alpha: true  // Enable transparency
+  });
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setClearColor(0x000000, 0);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
+  scene.add(ambientLight);
+
+  const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1.0);
+  directionalLight1.position.set(5, 5, 5);
+  scene.add(directionalLight1);
+
+  const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+  directionalLight2.position.set(-5, 5, -5);
+  scene.add(directionalLight2);
+
+  const directionalLight3 = new THREE.DirectionalLight(0xffffff, 0.5);
+  directionalLight3.position.set(0, -5, 0);
+  scene.add(directionalLight3);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.05;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 2;
+  const loader = new GLTFLoader();
+  const loadingIndicator = document.getElementById('loading-indicator');
+  const loadProgress = document.getElementById('load-progress');
+
+  console.log('Starting to load model...');
+
+  loader.load(
+    'killer_whale.glb',
+    function (gltf) {
+      console.log('Model loaded successfully!', gltf);
+      loadingIndicator.style.display = 'none';
+
+      const model = gltf.scene;
+
+      const box = new THREE.Box3().setFromObject(model);
+      const center = box.getCenter(new THREE.Vector3());
+      const size = box.getSize(new THREE.Vector3());
+
+      console.log('Model size:', size.x, size.y, size.z);
+      console.log('Model center before adjustment:', center.x, center.y, center.z);
+      model.traverse((child) => {
+        if (child.isMesh) {
+          child.position.x -= center.x;
+          child.position.y -= center.y;
+          child.position.z -= center.z;
+        }
+      });
+
+      model.position.set(0, 0, 0);
+
+      const maxDim = Math.max(size.x, size.y, size.z);
+      const scale = 5 / maxDim;
+      model.scale.setScalar(scale);
+
+      console.log('Model scale:', scale);
+      console.log('Model position after centering:', model.position.x, model.position.y, model.position.z);
+
+      scene.add(model);
+      console.log('Model added to scene');
+      if (gltf.animations && gltf.animations.length > 0) {
+        console.log('Model has animations:', gltf.animations.length);
+        const mixer = new THREE.AnimationMixer(model);
+        gltf.animations.forEach((clip) => {
+          mixer.clipAction(clip).play();
+        });
+
+        const clock = new THREE.Clock();
+        const currentDirection = new THREE.Vector3(0, 0, 1);
+
+        function animate() {
+          requestAnimationFrame(animate);
+          const delta = clock.getDelta();
+          mixer.update(delta);
+
+          // Slower, smoother swimming path (Lissajous curve)
+          const time = Date.now() * 0.00015;
+
+          const newX = Math.sin(time * 3) * 10;
+          const newY = Math.cos(time * 2) * 3;
+          const newZ = Math.sin(time * 1) * 4 - 10;
+          const nextTime = time + 0.01;
+          const nextX = Math.sin(nextTime * 3) * 10;
+          const nextY = Math.cos(nextTime * 2) * 3;
+          const nextZ = Math.sin(nextTime * 1) * 4 - 10;
+
+          const targetDirection = new THREE.Vector3(nextX - newX, nextY - newY, nextZ - newZ).normalize();
+
+          currentDirection.lerp(targetDirection, 0.05);
+
+          // Update position
+          model.position.set(newX, newY, newZ);
+
+          const lookTarget = new THREE.Vector3().addVectors(model.position, currentDirection);
+          model.lookAt(lookTarget);
+
+          model.lookAt(lookTarget);
+
+          controls.update();
+          renderer.render(scene, camera);
+        }
+        animate();
+      } else {
+        console.log('No animations, just rotating');
+        const clock = new THREE.Clock();
+        const currentDirection = new THREE.Vector3(0, 0, 1);
+
+        function animate() {
+          requestAnimationFrame(animate);
+
+          const time = Date.now() * 0.00015;
+
+          const newX = Math.sin(time * 3) * 10;
+          const newY = Math.cos(time * 2) * 3;
+          const newZ = Math.sin(time * 1) * 4 - 10;
+          const nextTime = time + 0.01;
+          const nextX = Math.sin(nextTime * 3) * 10;
+          const nextY = Math.cos(nextTime * 2) * 3;
+          const nextZ = Math.sin(nextTime * 1) * 4 - 10;
+
+          const targetDirection = new THREE.Vector3(nextX - newX, nextY - newY, nextZ - newZ).normalize();
+
+          currentDirection.lerp(targetDirection, 0.05);
+
+          model.position.set(newX, newY, newZ);
+
+          const lookTarget = new THREE.Vector3().addVectors(model.position, currentDirection);
+          model.lookAt(lookTarget);
+
+          controls.update();
+          renderer.render(scene, camera);
+        }
+        animate();
+      }
+    },
+    function (xhr) {
+      const percentComplete = (xhr.loaded / xhr.total * 100).toFixed(1);
+      loadProgress.textContent = percentComplete + '%';
+      console.log(percentComplete + '% loaded (' + (xhr.loaded / 1024 / 1024).toFixed(1) + ' MB)');
+    },
+    function (error) {
+      console.error('Error loading model:', error);
+      loadingIndicator.innerHTML = 'Error loading model. Check console for details.';
+      loadingIndicator.style.color = 'red';
+    }
+  );
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+</script>
+
+</html>
