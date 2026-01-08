@@ -1,6 +1,4 @@
 :root {
-  /* Colors Palette */
-  /* HEX */
   --bice-blue: #006ba6ff;
   --floral-white: #f7f4eaff;
   --coral: #ff8552ff;
@@ -8,60 +6,80 @@
   --black: #030301ff;
   --Prussian-blue: #023047ff;
   --Selective-yellow: #ffb703;
-  /* Palette Number 2 - https://coolors.co/ */
   --sky-blue: #8ecae6ff;
-  --blue-green-2: #219ebcff; /* Renamed to blue-green-2 */
+  --blue-green-2: #219ebcff;
   --prussian-blue: #023047ff;
-  --selective-yellow-2: #ffb703ff; /* Renamed to selective-yellow-2 */
+  --selective-yellow-2: #ffb703ff;
   --ut-orange: #fb8500ff;
-  /* Turquoise */
   --federal-blue: #03045eff;
   --marian-blue: #023e8aff;
   --honolulu-blue: #0077b6ff;
-  --blue-green: #0096c7ff; /* Renamed to blue-green */
+  --blue-green: #0096c7ff;
   --pacific-cyan: #00b4d8ff;
   --vivid-sky-blue: #48cae4ff;
   --non-photo-blue: #90e0efff;
   --non-photo-blue-2: #ade8f4ff;
   --light-cyan: #caf0f8ff;
-  /* White */
   --white: #ffffff;
   --lapis-lazuli: #22577aff;
   --verdigris: #38a3a5ff;
   --emerald: #57cc99ff;
   --light-green: #80ed99ff;
   --tea-green: #c7f9ccff;
+  
+  --bg-color: var(--white);
+  --text-color: var(--federal-blue);
+  --nav-bg: var(--emerald);
+  --nav-text: #131010;
+  --heading-bg: var(--light-cyan);
+  --heading-text: var(--Prussian-blue);
+  --footer-bg: #333;
+  --footer-text: #fff;
 }
 
-/* Set default font and margin for the entire document */
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --nav-bg: #2d5f4d;
+  --nav-text: #e0e0e0;
+  --heading-bg: #2a4a5a;
+  --heading-text: #90e0ef;
+  --footer-bg: #0a0a0a;
+  --footer-text: #e0e0e0;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  /* Example usage */
-  background: var(--white);
-  color: var(--federal-blue);
-  /* border: 0.5px solid var(--coral); */
-  /* box-shadow: 0 0 10px var(--Prussian-blue); */
-  /* text-shadow: 1px 1px 1px var(--black); */
-  /* background-image: var(--gradient-top); */
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
   background-image: var(--blue-green);
-}
-
-body {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding-top: 80px;
+}
+
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
 
 main {
   width: 100%;
-  max-width: 800px; /* Adjust the max-width as needed */
+  max-width: 800px;
   padding: 2rem;
+  margin-top: 20px;
 }
 
-/* Style the page header */
 header {
   padding: 1rem;
   border-radius: 2px;
@@ -77,20 +95,19 @@ header {
 }
 
 nav {
-  background-color: var(--emerald);
-  /* color: var(--bice-blue); */
+  background-color: var(--nav-bg);
   padding: 1rem;
   border-radius: 10px;
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%; /* Adjust the width as needed */
-  max-width: 830px; /* Optional: Set a maximum width */
+  width: 90%;
+  max-width: 900px;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 
-
-/* Style the navigation menu links */
 nav ul {
   list-style: none;
   margin: 0;
@@ -104,32 +121,54 @@ nav li {
 }
 
 nav a {
-  color: #131010;
+  color: var(--nav-text);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Style the active navigation menu link - hovering */
 nav a:hover {
   color: #0c0c0c;
 }
 
-/* Style the sections titles */
 h1, h2, h3, h4, h5, h6 {
   display: inline-block;
-  background-color: var(--light-cyan);
-  color: var(--Prussian-blue);
+  background-color: var(--heading-bg);
+  color: var(--heading-text);
   border-radius: 4px;
   padding: 0.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Style the page footer */
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   width: 40%;
   bottom: 0;
   padding: 0.8rem;
   text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--nav-text);
+  color: var(--nav-text);
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 1rem;
+  position: absolute;
+  right: 280px;
+  top: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
 }
 
 nav {
@@ -175,19 +214,19 @@ nav ul li a:hover {
 }
 
 .github-container {
-  right: 0px; /* Adjust this value to set the distance from the right */
+  right: 10px;
 }
 
 .linkedin-container {
-  right: 70px; /* Adjust this value to set the distance from the right */
+  right: 80px;
 }
 
 .google-scholar-container {
-  right: 140px; /* Adjust this value to set the distance from the right */
+  right: 150px;
 }
 
 .twitter-container {
-  right: 200px; /* Adjust this value to set the distance from the right */
+  right: 210px;
 }
 
 .github-container a,
@@ -210,11 +249,11 @@ nav ul li a:hover {
 .linkedin-container a img,
 .google-scholar-container a img
 {
-  width: 30px; /* Adjust this value to set the logo size */
+  width: 30px;
   margin-top: 4px;
 }
 .twitter-container a img{
-  width: 45px; /* Adjust this value to set the logo size */
+  width: 45px;
   margin-top: 0px;
 }
 
@@ -238,19 +277,10 @@ nav ul li a:hover {
   border-radius: 50%;
 }
 .intro {
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center; */
   margin-top: 30px;
   margin-left: 20px;
-  /* flex-grow: 3; */
-  /* text-align: left; */
 }
 
-
-
-/* Contact */
 .contact-container {
   display: flex;
   align-items: flex-start;
@@ -303,7 +333,6 @@ nav ul li a:hover {
   background-color: #45a049;
 }
 
-/* Style the projects */
 .video-wrapper {
   display: flex;
   flex-direction: row;
@@ -324,7 +353,6 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
-/* Style the publications */
 .publication {
   display: flex;
   flex-direction: column;
@@ -357,4 +385,48 @@ nav ul li a:hover {
 
 .citation strong {
   font-weight: bold;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-up {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.scale-up.visible {
+  opacity: 1;
+  transform: scale(1);
 }
