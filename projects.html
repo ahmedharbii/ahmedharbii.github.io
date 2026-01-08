@@ -1,6 +1,7 @@
 	<!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Ahmed Harbi</title>
 	<link rel="stylesheet" href="styles.css">
 	<link rel="icon" href="logo.png">
@@ -35,6 +36,9 @@
 				</a>
 			  </li>
 			</ul>
+			<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+			  <span id="theme-icon">🌙</span>
+			</button>
 		  </nav>
 	</header>
 
@@ -44,14 +48,14 @@
 
 
 		<section class="projects">
-			<h2>Recent Projects</h2>
+			<h2 class="fade-in">Recent Projects</h2>
 			<div class="video-wrapper">
-				<div class="video-item">
+				<div class="video-item slide-left">
 				  <h3>UJI Butler</h3>
 				  <p>Sign Language Recognition using YoloV7 to detect hand gestures and give commands to UR5 robot arm to serve coffee. After that, UR5 gives the coffee to kobuki robot to deliver it to the customer.</p>
 				  <iframe width="560" height="315" src="https://www.youtube.com/embed/iXYfxaN-TXU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
-				<div class="video-item">
+				<div class="video-item slide-right">
 				  <h3>BlueROV2 Docking - Unity</h3>
 				  <p>Simulation scenario in Unity using water features,
 					and added a docking station with arucos on the corners, and the BlueROV2, was able to 
@@ -77,7 +81,49 @@
 		  
 	</main>
 	<footer>
-		<p>Copyright &copy Ahmed Harbi</p>
+		<p>Copyright &copy; <span id="year"></span> Ahmed Harbi</p>
+		<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 	</footer>
+	<script>
+	  const themeToggle = document.getElementById('theme-toggle');
+	  const themeIcon = document.getElementById('theme-icon');
+	  const currentTheme = localStorage.getItem('theme') || 'light';
+	  
+	  if (currentTheme === 'dark') {
+		document.documentElement.setAttribute('data-theme', 'dark');
+		themeIcon.textContent = '☀️';
+	  }
+	  
+	  themeToggle.addEventListener('click', () => {
+		const theme = document.documentElement.getAttribute('data-theme');
+		if (theme === 'dark') {
+		  document.documentElement.removeAttribute('data-theme');
+		  localStorage.setItem('theme', 'light');
+		  themeIcon.textContent = '🌙';
+		} else {
+		  document.documentElement.setAttribute('data-theme', 'dark');
+		  localStorage.setItem('theme', 'dark');
+		  themeIcon.textContent = '☀️';
+		}
+	  });
+	</script>
+	<script>
+	  const observerOptions = {
+		threshold: 0.1,
+		rootMargin: '0px 0px -50px 0px'
+	  };
+
+	  const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+		  if (entry.isIntersecting) {
+			entry.target.classList.add('visible');
+		  }
+		});
+	  }, observerOptions);
+
+	  document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-up').forEach(el => {
+		observer.observe(el);
+	  });
+	</script>
 </body>
 </html>

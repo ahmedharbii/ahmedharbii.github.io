@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Ahmed Harbi</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="icon" href="logo.png">
@@ -37,6 +38,9 @@
             </a>
           </li>
         </ul>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span id="theme-icon">🌙</span>
+        </button>
       </nav>
 
     <div class="contact-container">
@@ -59,7 +63,49 @@
     </div>
 </body>
 <footer>
-    <p>Copyright &copy; 2023 Ahmed Harbi</p>
+    <p>Copyright &copy; <span id="year"></span> Ahmed Harbi</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </footer>
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  
+  if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeIcon.textContent = '☀️';
+  }
+  
+  themeToggle.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'dark') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+      themeIcon.textContent = '🌙';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      themeIcon.textContent = '☀️';
+    }
+  });
+</script>
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-up').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 </html>
 
