@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Cache</title>
+</head>
+<body>
+    <h1>Clearing Service Worker Cache...</h1>
+    <div id="status"></div>
+    <script>
+        const statusDiv = document.getElementById('status');
+        
+        // Unregister all service workers
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+            for(let registration of registrations) {
+                registration.unregister();
+                statusDiv.innerHTML += '<p>✅ Unregistered service worker</p>';
+            }
+        });
+        
+        // Clear all caches
+        caches.keys().then(cacheNames => {
+            return Promise.all(
+                cacheNames.map(cacheName => {
+                    statusDiv.innerHTML += `<p>🗑️ Deleting cache: ${cacheName}</p>`;
+                    return caches.delete(cacheName);
+                })
+            );
+        }).then(() => {
+            statusDiv.innerHTML += '<h2>✅ All caches cleared!</h2>';
+            statusDiv.innerHTML += '<p>Now press Ctrl+Shift+R to hard refresh</p>';
+            statusDiv.innerHTML += '<p><a href="/index.html">Go to homepage</a></p>';
+        });
+    </script>
+</body>
+</html>
