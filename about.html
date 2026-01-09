@@ -2,10 +2,18 @@
 <html>
 
 <head>
-  <title>About | Ahmed Harbi Elsayed</title>
-  <link rel="stylesheet" href="/styles.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Ahmed Harbi Elsayed</title>
+  <script>
+    // Prevent theme flash by setting theme immediately
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://ahmedharbii.github.io/about.html">
   <link rel="icon" href="logo.png">
   <meta name="description"
     content="About Ahmed Harbi Elsayed, a Robotics Researcher specializing in Marine and Maritime Intelligent Robotics.">
