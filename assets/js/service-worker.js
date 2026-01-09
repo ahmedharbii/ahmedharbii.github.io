@@ -6,10 +6,10 @@ const urlsToCache = [
   '/projects.html',
   '/contact.html',
   '/about.html',
-  '/styles.css',
-  '/particles.js',
-  '/images/home/profile_pic.jpeg',
-  '/logo.png',
+  '/assets/css/styles.css',
+  '/assets/js/particles.js',
+  '/assets/images/home/profile_pic.jpeg',
+  '/assets/icons/logo.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
   'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js'
 ];

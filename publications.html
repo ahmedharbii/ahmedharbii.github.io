@@ -12,9 +12,9 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="canonical" href="https://ahmedharbii.github.io/publications.html">
-  <link rel="icon" href="logo.png">
+  <link rel="icon" href="assets/icons/logo.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#38bdf8">
   <meta name="description"
@@ -28,14 +28,14 @@
   <meta property="og:url" content="https://ahmedharbii.github.io/publications.html">
   <meta property="og:title" content="Publications | Ahmed Harbi Elsayed">
   <meta property="og:description" content="Read the latest research publications by Ahmed Harbi Elsayed.">
-  <meta property="og:image" content="https://ahmedharbii.github.io/images/home/profile_pic.jpeg">
+  <meta property="og:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://ahmedharbii.github.io/publications.html">
   <meta property="twitter:title" content="Publications | Ahmed Harbi Elsayed">
   <meta property="twitter:description" content="Read the latest research publications by Ahmed Harbi Elsayed.">
-  <meta property="twitter:image" content="https://ahmedharbii.github.io/images/home/profile_pic.jpeg">
+  <meta property="twitter:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -87,7 +87,7 @@
       <h2 class="fade-in">Publications</h2>
 
       <div class="publication-card fade-in">
-        <img class="publication-img" src="images/publications/uji_butler.png" alt="UJI-Butler">
+        <img class="publication-img" src="assets/images/publications/uji_butler.png" alt="UJI-Butler">
         <div class="publication-content">
           <h3 class="publication-title">UJI-Butler: A Symbolic/Non-symbolic Robotic System that Learns Through
             Multi-modal Interaction</h3>
@@ -103,7 +103,7 @@
       </div>
 
       <div class="publication-card fade-in" id="interactive-sim-framework">
-        <img class="publication-img" src="images/publications/Interactive_Simulator_Framework.png"
+        <img class="publication-img" src="assets/images/publications/Interactive_Simulator_Framework.png"
           alt="Interactive Simulator Framework">
         <div class="publication-content">
           <h3 class="publication-title">Interactive Simulator Framework for XAI Applications in Aquatic Environments
@@ -121,7 +121,7 @@
       </div>
 
       <div class="publication-card fade-in">
-        <img class="publication-img" src="images/publications/Human-Robot_Collaboration.jpg"
+        <img class="publication-img" src="assets/images/publications/Human-Robot_Collaboration.jpg"
           alt="Human-Robot Collaboration">
         <div class="publication-content">
           <h3 class="publication-title">Human-Robot Collaboration System Setup for Weed Harvesting Scenarios in Aquatic
@@ -137,7 +137,7 @@
       </div>
 
       <div class="publication-card fade-in">
-        <img class="publication-img" src="images/publications/pangasius_paper.png" alt="Pangasius Fish Robot">
+        <img class="publication-img" src="assets/images/publications/pangasius_paper.png" alt="Pangasius Fish Robot">
         <div class="publication-content">
           <h3 class="publication-title">Design and control of soft biomimetic pangasius fish robot using fin ray effect
             and reinforcement learning</h3>
@@ -161,7 +161,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script src="particles.js"></script>
+  <script src="assets/js/particles.js"></script>
   <script>
     // Hamburger Menu Toggle
     const hamburger = document.getElementById('hamburger');
@@ -219,7 +219,7 @@
     // Register Service Worker for offline functionality
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('/assets/js/service-worker.js')
           .then(registration => console.log('Service Worker registered:', registration.scope))
           .catch(error => console.log('Service Worker registration failed:', error));
       });

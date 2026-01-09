@@ -12,9 +12,9 @@
 			document.documentElement.setAttribute('data-theme', theme);
 		})();
 	</script>
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="canonical" href="https://ahmedharbii.github.io/projects.html">
-	<link rel="icon" href="logo.png">
+	<link rel="icon" href="assets/icons/logo.png">
 	<link rel="manifest" href="/manifest.json">
 	<meta name="theme-color" content="#38bdf8">
 	<meta name="description"
@@ -28,14 +28,14 @@
 	<meta property="og:url" content="https://ahmedharbii.github.io/projects.html">
 	<meta property="og:title" content="Projects | Ahmed Harbi Elsayed">
 	<meta property="og:description" content="Explore the robotics and AI projects of Ahmed Harbi Elsayed.">
-	<meta property="og:image" content="https://ahmedharbii.github.io/images/home/profile_pic.jpeg">
+	<meta property="og:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://ahmedharbii.github.io/projects.html">
 	<meta property="twitter:title" content="Projects | Ahmed Harbi Elsayed">
 	<meta property="twitter:description" content="Explore the robotics and AI projects of Ahmed Harbi Elsayed.">
-	<meta property="twitter:image" content="https://ahmedharbii.github.io/images/home/profile_pic.jpeg">
+	<meta property="twitter:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
 
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<script type="importmap">
@@ -136,7 +136,7 @@
 				<h3>Deep Visual Odometry (DVO)</h3>
 				<span class="card-meta">MSc Project | 2023</span>
 				<p>Developed synthetic dataset collection pipeline using Unity and implemented Deep Visual Odometry on BlueROV2 with Unity Robotics integration for underwater navigation.</p>
-				<img src="images/projects/unity_simulator.jpeg" alt="Unity Underwater Simulator" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 1rem;">
+				<img src="assets/images/projects/unity_simulator.jpeg" alt="Unity Underwater Simulator" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 1rem;">
 			</div>
 
 			<div class="card">
@@ -215,7 +215,7 @@
 	</footer>
 
 	<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-	<script src="particles.js"></script>
+	<script src="assets/js/particles.js"></script>
 	<script>
 		// Hamburger Menu Toggle
 		const hamburger = document.getElementById('hamburger');
@@ -273,7 +273,7 @@
 		// Register Service Worker for offline functionality
 		if ('serviceWorker' in navigator) {
 			window.addEventListener('load', () => {
-				navigator.serviceWorker.register('/service-worker.js')
+				navigator.serviceWorker.register('/assets/js/service-worker.js')
 					.then(registration => console.log('Service Worker registered:', registration.scope))
 					.catch(error => console.log('Service Worker registration failed:', error));
 			});
