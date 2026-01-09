@@ -79,6 +79,11 @@
 </head>
 
 <body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
   <canvas id="particle-canvas"></canvas>
 
   <nav>
@@ -339,6 +344,24 @@
 
     // Year Update
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Page Loader
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('page-loader');
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 500);
+    });
+
+    // Lazy Load Images
+    document.querySelectorAll('img').forEach(img => {
+      img.loading = 'lazy';
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', () => img.classList.add('loaded'));
+      }
+    });
 
     // Register Service Worker for offline functionality
     if ('serviceWorker' in navigator) {
