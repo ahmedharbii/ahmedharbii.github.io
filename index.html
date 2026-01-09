@@ -67,12 +67,12 @@
       </div>
     </section>
 
-    <div class="shark-container fade-in">
-      <canvas id="shark-canvas"></canvas>
-      <p class="shark-attribution">
-        <a href="https://skfb.ly/6VoZC" target="_blank">"Great Hammerhead Shark"</a> by DigitalLife3D (CC BY-NC 4.0)
-      </p>
-    </div>
+    <canvas id="shark-canvas"
+      style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <p class="shark-attribution"
+      style="position: fixed; bottom: 10px; right: 10px; width: auto; text-align: right; opacity: 0.5; z-index: 10;">
+      <a href="https://skfb.ly/6VoZC" target="_blank">"Great Hammerhead Shark"</a> by DigitalLife3D (CC BY-NC 4.0)
+    </p>
 
     <section class="fade-in">
       <h2>Work Experience</h2>
@@ -170,7 +170,7 @@
       const sharkScene = new THREE.Scene();
 
       const sharkCamera = new THREE.PerspectiveCamera(45, sharkCanvas.clientWidth / sharkCanvas.clientHeight, 0.1, 1000);
-      sharkCamera.position.set(5, 3, 5);
+      sharkCamera.position.set(7, 7, 7);
       sharkCamera.lookAt(0, 0, 0);
 
       const sharkRenderer = new THREE.WebGLRenderer({
@@ -223,12 +223,72 @@
 
           sharkScene.add(model);
 
-          function animate() {
-            requestAnimationFrame(animate);
-            sharkControls.update();
-            sharkRenderer.render(sharkScene, sharkCamera);
+          // Animation Logic
+          if (gltf.animations && gltf.animations.length > 0) {
+            const mixer = new THREE.AnimationMixer(model);
+            gltf.animations.forEach((clip) => {
+              mixer.clipAction(clip).play();
+            });
+
+            const clock = new THREE.Clock();
+            const currentDirection = new THREE.Vector3(0, 0, 1);
+
+            function animate() {
+              requestAnimationFrame(animate);
+              const delta = clock.getDelta();
+              mixer.update(delta);
+
+              // Swimming path
+              const time = Date.now() * 0.00015;
+              const newX = Math.sin(time * 3) * 10;
+              const newY = Math.cos(time * 2) * 3;
+              const newZ = Math.sin(time * 1) * 4 - 10;
+
+              const nextTime = time + 0.01;
+              const nextX = Math.sin(nextTime * 3) * 10;
+              const nextY = Math.cos(nextTime * 2) * 3;
+              const nextZ = Math.sin(nextTime * 1) * 4 - 10;
+
+              const targetDirection = new THREE.Vector3(nextX - newX, nextY - newY, nextZ - newZ).normalize();
+              currentDirection.lerp(targetDirection, 0.05);
+
+              model.position.set(newX, newY, newZ);
+              const lookTarget = new THREE.Vector3().addVectors(model.position, currentDirection);
+              model.lookAt(lookTarget);
+
+              sharkControls.update();
+              sharkRenderer.render(sharkScene, sharkCamera);
+            }
+            animate();
+          } else {
+            // Fallback if no animations
+            const clock = new THREE.Clock();
+            const currentDirection = new THREE.Vector3(0, 0, 1);
+
+            function animate() {
+              requestAnimationFrame(animate);
+              const time = Date.now() * 0.00015;
+              const newX = Math.sin(time * 3) * 10;
+              const newY = Math.cos(time * 2) * 3;
+              const newZ = Math.sin(time * 1) * 4 - 10;
+
+              const nextTime = time + 0.01;
+              const nextX = Math.sin(nextTime * 3) * 10;
+              const nextY = Math.cos(nextTime * 2) * 3;
+              const nextZ = Math.sin(nextTime * 1) * 4 - 10;
+
+              const targetDirection = new THREE.Vector3(nextX - newX, nextY - newY, nextZ - newZ).normalize();
+              currentDirection.lerp(targetDirection, 0.05);
+
+              model.position.set(newX, newY, newZ);
+              const lookTarget = new THREE.Vector3().addVectors(model.position, currentDirection);
+              model.lookAt(lookTarget);
+
+              sharkControls.update();
+              sharkRenderer.render(sharkScene, sharkCamera);
+            }
+            animate();
           }
-          animate();
         },
         undefined,
         function (error) {
@@ -237,9 +297,9 @@
       );
 
       window.addEventListener('resize', () => {
-        sharkCamera.aspect = sharkCanvas.clientWidth / sharkCanvas.clientHeight;
+        sharkCamera.aspect = window.innerWidth / window.innerHeight;
         sharkCamera.updateProjectionMatrix();
-        sharkRenderer.setSize(sharkCanvas.clientWidth, sharkCanvas.clientHeight);
+        sharkRenderer.setSize(window.innerWidth, window.innerHeight);
       });
     }
   </script>
