@@ -93,31 +93,36 @@
     <section>
       <h2 class="fade-in">Get in Touch</h2>
 
-      <div class="contact-form fade-in">
-        <form action="https://formspree.io/f/mrgwjjrw" method="POST" id="contact-form">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" class="form-control" required placeholder="Your Name">
-          </div>
+      <div class="contact-info fade-in">
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-color); opacity: 0.9;">
+          Feel free to reach out for collaborations, research inquiries, or just to say hi!
+        </p>
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" class="form-control" required
-              placeholder="your.email@example.com">
-          </div>
+        <div class="contact-methods">
+          <a href="mailto:ahmedharbii10@gmail.com" class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email</h3>
+            <p>ahmedharbii10@gmail.com</p>
+          </a>
 
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" class="form-control" rows="5" required
-              placeholder="How can I help you?"></textarea>
-          </div>
+          <a href="https://linkedin.com/in/ahmedharbii" target="_blank" class="contact-card">
+            <div class="contact-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <p>Connect with me</p>
+          </a>
 
-          <button type="submit" class="btn-submit" id="submit-btn">
-            <span class="btn-text">Send Message</span>
-            <span class="btn-loader" style="display: none;">Sending...</span>
-          </button>
-          <div id="form-status" class="form-status" style="display: none;"></div>
-        </form>
+          <a href="https://github.com/ahmedharbii" target="_blank" class="contact-card">
+            <div class="contact-icon">💻</div>
+            <h3>GitHub</h3>
+            <p>Check out my code</p>
+          </a>
+
+          <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" target="_blank" class="contact-card">
+            <div class="contact-icon">🎓</div>
+            <h3>Google Scholar</h3>
+            <p>View my publications</p>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -193,55 +198,6 @@
 
     // Year Update
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Contact Form Handler
-    const form = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnLoader = submitBtn.querySelector('.btn-loader');
-    const formStatus = document.getElementById('form-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      // Show loading state
-      submitBtn.disabled = true;
-      btnText.style.display = 'none';
-      btnLoader.style.display = 'inline';
-      formStatus.style.display = 'none';
-      
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        
-        if (response.ok) {
-          // Success
-          formStatus.textContent = '✓ Message sent successfully! I\\'ll get back to you soon.';
-          formStatus.className = 'form-status success';
-          formStatus.style.display = 'block';
-          form.reset();
-        } else {
-          // Error
-          formStatus.textContent = '✗ Oops! Something went wrong. Please try again.';
-          formStatus.className = 'form-status error';
-          formStatus.style.display = 'block';
-        }
-      } catch (error) {
-        formStatus.textContent = '✗ Network error. Please check your connection.';
-        formStatus.className = 'form-status error';
-        formStatus.style.display = 'block';
-      } finally {
-        // Reset button
-        submitBtn.disabled = false;
-        btnText.style.display = 'inline';
-        btnLoader.style.display = 'none';
-      }
-    });
 
     // Whale Model Logic
     const whaleCanvas = document.getElementById('whale-canvas');
