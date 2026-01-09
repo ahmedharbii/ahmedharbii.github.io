@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ahmed Harbi Elsayed | Robotics Researcher</title>
+  <script>
+    // Prevent theme flash by setting theme immediately
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="logo.png">
   <meta name="description"
@@ -30,7 +37,6 @@
   <meta property="twitter:image" content="https://ahmedharbii.github.io/images/home/profile_pic.jpeg">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script type="importmap">
       {
         "imports": {
