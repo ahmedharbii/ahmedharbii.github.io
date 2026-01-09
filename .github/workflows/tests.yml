@@ -1,0 +1,34 @@
+name: Website Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Run website tests
+      run: |
+        python tests/test_website.py
+        
+    - name: Check HTML validity (optional)
+      continue-on-error: true
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y tidy
+        for file in *.html; do
+          echo "Checking $file"
+          tidy -q -e "$file" || true
+        done

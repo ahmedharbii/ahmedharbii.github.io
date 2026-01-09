@@ -42,33 +42,40 @@
 	<canvas id="particle-canvas"></canvas>
 
 	<nav>
-		<ul>
-			<li><a href="index.html" class="name">Ahmed Harbi Elsayed</a></li>
+		<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<a href="index.html" class="name" style="position: relative; z-index: 1001;">Ahmed Harbi Elsayed</a>
+
+		<ul id="nav-menu">
 			<li><a href="contact.html">Contact</a></li>
 			<li><a href="projects.html">Projects</a></li>
 			<li><a href="publications.html">Publications</a></li>
+
+			<div class="social-icons">
+				<a href="https://github.com/ahmedharbii" aria-label="GitHub">
+					<img src="https://github.com/fluidicon.png" alt="GitHub">
+				</a>
+				<a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
+						alt="LinkedIn">
+				</a>
+				<a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
+						alt="Scholar">
+				</a>
+				<a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter">
+				</a>
+			</div>
+
+			<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+				<span id="theme-icon">🌙</span>
+			</button>
 		</ul>
-
-		<div class="social-icons">
-			<a href="https://github.com/ahmedharbii" aria-label="GitHub">
-				<img src="https://github.com/fluidicon.png" alt="GitHub">
-			</a>
-			<a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
-					alt="LinkedIn">
-			</a>
-			<a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
-					alt="Scholar">
-			</a>
-			<a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter">
-			</a>
-		</div>
-
-		<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-			<span id="theme-icon">🌙</span>
-		</button>
 	</nav>
 
 	<main>
@@ -102,9 +109,10 @@
 			</div>
 
 			<div class="card">
-				<h3>BlueROV2 Docking - Unity</h3>
-				<p>Simulation scenario in Unity using water features, and added a docking station with arucos on the
-					corners. The BlueROV2 was able to dock to the docking station using visual servoing.</p>
+				<h3>UnityUWSIM - Underwater Simulator</h3>
+				<span class="card-meta">2023</span>
+				<p>Developed a comprehensive underwater simulator using Unity that served as the competition platform for the 2nd MIR Annual Symposium Robotics Challenge at UJI, Spain. The simulator features a realistic underwater environment based on CIRTESU Lab with BlueROV2, docking stations, obstacles, and marine life for testing autonomous navigation and visual servoing algorithms.</p>
+				<p><a href="https://github.com/ahmedharbii/UnityUWSIM" target="_blank" rel="noopener noreferrer" class="publication-link">View on GitHub →</a></p>
 				<div class="video-container"
 					style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
 					<iframe src="https://www.youtube.com/embed/v4bm29MwCQ8"
@@ -115,8 +123,36 @@
 			</div>
 
 			<div class="card">
-				<h3>RC Aircraft</h3>
-				<p>Design and control of a Radio Controlled Aircraft.</p>
+				<h3>Deep Visual Odometry (DVO)</h3>
+				<span class="card-meta">MSc Project | 2023</span>
+				<p>Developed synthetic dataset collection pipeline using Unity and implemented Deep Visual Odometry on BlueROV2 with Unity Robotics integration for underwater navigation.</p>
+				<img src="images/projects/unity_simulator.jpeg" alt="Unity Underwater Simulator" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 1rem;">
+			</div>
+
+			<div class="card">
+				<h3>Autonomous Surface Vehicle (ASV)</h3>
+				<span class="card-meta">MSc Project | 2022</span>
+				<p>Designed and programmed an autonomous DDBoat for trajectory following in open water environments.</p>
+				<div class="project-achievements">
+					<p><strong>🏆 Achievement:</strong></p>
+					<ul>
+						<li><strong>1st Place</strong> - MIR Championship at Lac de Guélédan, France (2022)</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="card">
+				<h3>RC Aircraft - Graduation Project</h3>
+				<span class="card-meta">2018 | Grade: Excellent</span>
+				<p>Designed and manufactured a remotely controlled aircraft as my BSc graduation project. Led tail design and conducted complete CFD analysis using Ansys for aerodynamic optimization.</p>
+				<div class="project-achievements">
+					<p><strong>🏆 Major Achievements:</strong></p>
+					<ul>
+						<li><strong>Best Engineering Graduation Project of the Year (2018)</strong> in Egypt</li>
+						<li><strong>1st Place in Technical Design Report</strong> - SAE Aero Design 2018 Competition (Advanced Class)</li>
+						<li>Competed in Van Nuys, California, USA among 37 international universities</li>
+					</ul>
+				</div>
 				<div class="video-container"
 					style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
 					<iframe src="https://www.youtube.com/embed/OFFzbm5mgCk"
@@ -124,6 +160,41 @@
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 				</div>
+			</div>
+
+		</section>
+
+		<section class="projects">
+			<h2 class="fade-in">Earlier Projects</h2>
+
+			<div class="card">
+				<h3>RaptorII ROV</h3>
+				<span class="card-meta">2017</span>
+				<p>Designed and manufactured a remotely operated vehicle (ROV) to participate in MATE Regional Competition. Built the mechanical structure and integrated control systems for underwater operations.</p>
+			</div>
+
+			<div class="card">
+				<h3>Mass Airflow Sensor (MAF)</h3>
+				<span class="card-meta">2017</span>
+				<p>Designed and programmed a Mass Airflow Sensor for data acquisition project. Implemented sensor calibration and real-time data logging capabilities.</p>
+			</div>
+
+			<div class="card">
+				<h3>Quadcopter</h3>
+				<span class="card-meta">2017</span>
+				<p>Designed and manufactured a quadcopter drone in AAST workshop. Built the frame, integrated flight controller, and tuned PID parameters for stable flight.</p>
+			</div>
+
+			<div class="card">
+				<h3>Raptor I ROV</h3>
+				<span class="card-meta">2016</span>
+				<p>Designed and manufactured the first generation ROV to participate in MATE Regional Competition. Initial exploration into underwater robotics and vehicle control.</p>
+			</div>
+
+			<div class="card">
+				<h3>PV Solar Panel</h3>
+				<span class="card-meta">2016</span>
+				<p>Manufactured and welded a 250-watt photovoltaic solar panel at Tiba Solar Factory. Gained hands-on experience in renewable energy technology and manufacturing processes.</p>
 			</div>
 
 		</section>
@@ -136,6 +207,31 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 	<script src="particles.js"></script>
 	<script>
+		// Hamburger Menu Toggle
+		const hamburger = document.getElementById('hamburger');
+		const navMenu = document.getElementById('nav-menu');
+
+		hamburger.addEventListener('click', () => {
+			hamburger.classList.toggle('active');
+			navMenu.classList.toggle('active');
+		});
+
+		// Close menu when clicking on a link
+		document.querySelectorAll('#nav-menu a').forEach(link => {
+			link.addEventListener('click', () => {
+				hamburger.classList.remove('active');
+				navMenu.classList.remove('active');
+			});
+		});
+
+		// Close menu when clicking outside
+		document.addEventListener('click', (e) => {
+			if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+				hamburger.classList.remove('active');
+				navMenu.classList.remove('active');
+			}
+		});
+
 		// Theme Toggle Logic
 		const themeToggle = document.getElementById('theme-toggle');
 		const themeIcon = document.getElementById('theme-icon');

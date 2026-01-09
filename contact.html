@@ -41,35 +41,42 @@
   <canvas id="particle-canvas"></canvas>
 
   <nav>
-    <ul>
-      <li><a href="index.html" class="name">Ahmed Harbi Elsayed</a></li>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="name" style="position: relative; z-index: 1001;">Ahmed Harbi Elsayed</a>
+
+    <ul id="nav-menu">
       <li><a href="contact.html">Contact</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
+
+      <div class="social-icons">
+        <a href="https://github.com/ahmedharbii" aria-label="GitHub">
+          <img src="https://github.com/fluidicon.png" alt="GitHub">
+        </a>
+        <a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
+            alt="LinkedIn">
+        </a>
+        <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
+            alt="Scholar">
+        </a>
+        <a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter">
+        </a>
+      </div>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span id="theme-icon">🌙</span>
+      </button>
     </ul>
-
-    <div class="social-icons">
-      <a href="https://github.com/ahmedharbii" aria-label="GitHub">
-        <img src="https://github.com/fluidicon.png" alt="GitHub">
-      </a>
-      <a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
-          alt="LinkedIn">
-      </a>
-      <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
-          alt="Scholar">
-      </a>
-      <a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter">
-      </a>
-    </div>
-
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      <span id="theme-icon">🌙</span>
-    </button>
   </nav>
 
   <main>
@@ -119,6 +126,31 @@
     import * as THREE from 'three';
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
 
     // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
@@ -192,7 +224,7 @@
       console.log('Starting to load whale model...');
 
       whaleLoader.load(
-        'killer_whale.glb',
+        'models/killer_whale.glb',
         function (gltf) {
           console.log('Whale model loaded successfully!');
           const model = gltf.scene;

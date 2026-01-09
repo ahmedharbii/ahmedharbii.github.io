@@ -45,35 +45,42 @@
   <canvas id="particle-canvas"></canvas>
 
   <nav>
-    <ul>
-      <li><a href="index.html" class="name">Ahmed Harbi Elsayed</a></li>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="name" style="position: relative; z-index: 1001;">Ahmed Harbi Elsayed</a>
+
+    <ul id="nav-menu">
       <li><a href="contact.html">Contact</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
+
+      <div class="social-icons">
+        <a href="https://github.com/ahmedharbii" aria-label="GitHub">
+          <img src="https://github.com/fluidicon.png" alt="GitHub">
+        </a>
+        <a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
+            alt="LinkedIn">
+        </a>
+        <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
+            alt="Scholar">
+        </a>
+        <a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter">
+        </a>
+      </div>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span id="theme-icon">🌙</span>
+      </button>
     </ul>
-
-    <div class="social-icons">
-      <a href="https://github.com/ahmedharbii" aria-label="GitHub">
-        <img src="https://github.com/fluidicon.png" alt="GitHub">
-      </a>
-      <a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
-          alt="LinkedIn">
-      </a>
-      <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
-          alt="Scholar">
-      </a>
-      <a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter">
-      </a>
-    </div>
-
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      <span id="theme-icon">🌙</span>
-    </button>
   </nav>
 
   <main>
@@ -102,7 +109,7 @@
       <div class="card">
         <h3>Researcher</h3>
         <span class="card-meta">DFKI - Germany (Present)</span>
-        <p>Working on advanced robotics research and development.</p>
+        <p>Working on Explainable AI in Marine Environments.</p>
       </div>
       <div class="card">
         <h3>Computer Vision Intern</h3>
@@ -115,8 +122,24 @@
         <p>Researched Visual SLAM techniques for maritime environments.</p>
       </div>
       <div class="card">
+        <h3>Research Assistant</h3>
+        <span class="card-meta">Nile University - Egypt</span>
+        <p>Research on Underwater Soft Robotics.</p>
+      </div>
+      <div class="card">
         <h3>Innovation Engineer</h3>
         <span class="card-meta">Nile University - Egypt</span>
+        <p>Responsible for Innovation Hub Lab and supervising students.</p>
+      </div>
+      <div class="card">
+        <h3>Robotics Instructor</h3>
+        <span class="card-meta">Innova STEM Education - Alexandria, Egypt</span>
+        <p>Taught robotics courses for students ages 6-17, introducing them to fundamental robotics concepts and hands-on projects.</p>
+      </div>
+      <div class="card">
+        <h3>ROV Instructor</h3>
+        <span class="card-meta">Innova STEM Education - Alexandria, Egypt</span>
+        <p>Instructed students on remotely operated vehicle design and operation.</p>
       </div>
     </section>
 
@@ -130,7 +153,12 @@
       <div class="card">
         <h3>BSc. in Electromechanical Engineering</h3>
         <span class="card-meta">Alexandria University, Egypt | 2013 - 2018</span>
-        <p><strong>Thesis:</strong> RC Aircraft Design & Control</p>
+        <p><strong>Graduation Project:</strong> RC Aircraft Design & Control | Grade: Excellent</p>
+        <ul class="achievement-list">
+          <li>🏆 <strong>Best Mechanical Engineering Graduation Project of the Year (2018)</strong> in Egypt</li>
+          <li>🥇 <strong>1st Place in Technical Design Report</strong> - SAE Aero Design 2018 Competition (Advanced Class), Van Nuys, California, USA - Among 37 universities</li>
+          <li>Led tail design and conducted complete CFD analysis on the aircraft</li>
+        </ul>
       </div>
     </section>
 
@@ -145,6 +173,76 @@
       </div>
     </section>
 
+    <section class="fade-in">
+      <h2>Academic Service</h2>
+      <div class="card">
+        <h3>Conference Reviewer</h3>
+        <span class="card-meta">2024 - Present</span>
+        <p>Serving as a reviewer for prestigious international conferences in Artificial Intelligence and Modeling & Simulation:</p>
+        <ul class="conference-list">
+          <li>
+            <strong>SGAI International Conference on Artificial Intelligence</strong>
+            <span class="conference-years">2024, 2025</span>
+            <div class="conference-links">
+              <a href="https://www.bcs-sgai.org/ai2024/" target="_blank" rel="noopener noreferrer" class="conference-link">AI 2024</a>
+              <a href="https://www.bcs-sgai.org/ai2025/" target="_blank" rel="noopener noreferrer" class="conference-link">AI 2025</a>
+            </div>
+          </li>
+          <li>
+            <strong>European Conference on Modelling and Simulation (ECMS)</strong>
+            <span class="conference-years">2025</span>
+            <div class="conference-links">
+              <a href="https://scs-europe.net/conf/ecms2025/" target="_blank" rel="noopener noreferrer" class="conference-link">ECMS 2025</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Volunteering</h2>
+      <div class="card">
+        <h3>Team Member</h3>
+        <span class="card-meta">AIESEC Alexandria | Alexandria, Egypt | November 2015 - February 2017</span>
+        <p>Active member contributing to international exchange and leadership development programs.</p>
+      </div>
+      <div class="card">
+        <h3>Campus Director (Exchange Participant)</h3>
+        <span class="card-meta">AIESEC in Greece | Athens, Greece | May 2016 - July 2016</span>
+        <p>Led campus operations and facilitated cultural exchange programs during international exchange.</p>
+      </div>
+      <div class="card">
+        <h3>English Teacher (Exchange Participant)</h3>
+        <span class="card-meta">AIESEC in Mainland China | Guangzhou, China | June 2015 - August 2015</span>
+        <p>Taught English to students and promoted cross-cultural understanding through educational exchange.</p>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Media & Press</h2>
+      <div class="card media-card">
+        <div class="media-header">
+          <div class="media-icon">📰</div>
+          <div class="media-info">
+            <h3>"This master's degree addresses pioneering techniques in underwater robotics"</h3>
+            <span class="card-meta">Periódico Mediterráneo | January 31, 2023</span>
+          </div>
+        </div>
+        <p>Featured interview discussing my journey in underwater robotics, the EMJMD Marine and Maritime Intelligent Robotics (MIR) master's program, and the future of AI in underwater applications.</p>
+        <blockquote class="interview-quote">
+          "I would recommend this program to someone who is really passionate about underwater robotics, as I believe this field can be challenging but incredibly rewarding... The challenges one faces in this field can be tough, but they are also what make it so interesting and fun."
+        </blockquote>
+        <div class="media-links">
+          <a href="https://www.master-mir.eu/interview-of-ahmed-elsayed-mir-student/" target="_blank" rel="noopener noreferrer" class="publication-link">
+            Read Full Interview →
+          </a>
+          <a href="media/press/31-1-2023-PeriodicoMediterraneoCastellon.pdf" target="_blank" class="publication-link">
+            Download PDF (Spanish) →
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -152,6 +250,31 @@
   </footer>
 
   <script>
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+
     // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
@@ -224,7 +347,7 @@
 
       const sharkLoader = new GLTFLoader();
       sharkLoader.load(
-        'hammerhead_shark.glb',
+        'models/hammerhead_shark.glb',
         function (gltf) {
           const model = gltf.scene;
           const box = new THREE.Box3().setFromObject(model);
