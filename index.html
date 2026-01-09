@@ -1,13 +1,13 @@
-<?php include 'header.php'; ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmed Harbi</title>
-  <link rel="stylesheet" href="/styles.css">
+  <title>Ahmed Harbi | Robotics Researcher</title>
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script type="importmap">
       {
@@ -17,166 +17,119 @@
         }
       }
     </script>
-  <style>
-    #shark-canvas {
-      width: 100%;
-      max-width: 600px;
-      height: 400px;
-      margin: 20px auto;
-      display: block;
-    }
-
-    .shark-container {
-      position: relative;
-      text-align: center;
-    }
-
-    .shark-attribution {
-      font-size: 11px;
-      color: var(--text-color);
-      text-align: center;
-      margin-top: 5px;
-      opacity: 0.7;
-    }
-
-    .shark-attribution a {
-      color: var(--text-color);
-      text-decoration: none;
-    }
-
-    .shark-attribution a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
 
 <body>
   <canvas id="particle-canvas"></canvas>
+
   <nav>
     <ul>
-      <li><a href="index.html" class="name">Ahmed Harbi Elsayed</a></li>
-      <!-- <li><a href="about.html">About</a></li> -->
+      <li><a href="index.html" class="name">Ahmed Harbi</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
-      <li class="github-container">
-        <a href="https://github.com/ahmedharbii">
-          <img src="https://github.com/fluidicon.png" alt="Github logo" class="logo">
-        </a>
-      </li>
-      <li class="linkedin-container ">
-        <a href="https://linkedin.com/in/ahmedharbii">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
-            alt="Linkedin logo" class="logo">
-        </a>
-      </li>
-      <li class="google-scholar-container">
-        <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
-            alt="Google Scholar logo" class="logo">
-        </a>
-      </li>
-      <li class="twitter-container">
-        <a href="https://twitter.com/AhmedHarbii10">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter logo"
-            class="logo">
-        </a>
-      </li>
     </ul>
+
+    <div class="social-icons">
+      <a href="https://github.com/ahmedharbii" aria-label="GitHub">
+        <img src="https://github.com/fluidicon.png" alt="GitHub">
+      </a>
+      <a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
+          alt="LinkedIn">
+      </a>
+      <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
+          alt="Scholar">
+      </a>
+      <a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter">
+      </a>
+    </div>
+
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
       <span id="theme-icon">🌙</span>
     </button>
   </nav>
 
   <main>
-    <section>
-      <div class="profile-container fade-in">
-        <div class="profile-pic">
-          <img src="images/home/profile_pic.jpeg" alt="Profile Picture">
-        </div>
+    <section class="profile-section fade-in">
+      <div class="profile-pic">
+        <img src="images/home/profile_pic.jpeg" alt="Ahmed Harbi">
       </div>
-      <div class="intro fade-in">
-        <p>I'm a Researcher @ DFKI (German Center For Artificial Intelligence)- MSc. Marine and Maritime Intelligent
-          Robotics - Erasmus Mundus Joint Master's Degree</p>
+      <div class="intro-text">
+        <h1>Hi, I'm Ahmed Harbi 👋</h1>
+        <p>Researcher @ DFKI (German Research Center for Artificial Intelligence). <br>
+          MSc. in Marine and Maritime Intelligent Robotics.</p>
+        <p>Passionate about underwater robotics, SLAM, and computer vision.</p>
       </div>
+    </section>
 
-      <div class="shark-container fade-in">
-        <canvas id="shark-canvas"></canvas>
-        <p class="shark-attribution">
-          <a href="https://skfb.ly/6VoZC" target="_blank">"Model 73A - Great Hammerhead Shark"</a> by DigitalLife3D is
-          licensed under
-          <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+    <div class="shark-container fade-in">
+      <canvas id="shark-canvas"></canvas>
+      <p class="shark-attribution">
+        <a href="https://skfb.ly/6VoZC" target="_blank">"Great Hammerhead Shark"</a> by DigitalLife3D (CC BY-NC 4.0)
+      </p>
+    </div>
+
+    <section class="fade-in">
+      <h2>Work Experience</h2>
+      <div class="card">
+        <h3>Researcher</h3>
+        <span class="card-meta">DFKI - Germany (Present)</span>
+        <p>Working on advanced robotics research and development.</p>
+      </div>
+      <div class="card">
+        <h3>Computer Vision Intern</h3>
+        <span class="card-meta">Hydromea SA - Switzerland</span>
+        <p>Developed computer vision algorithms for underwater applications.</p>
+      </div>
+      <div class="card">
+        <h3>VSLAM Intern</h3>
+        <span class="card-meta">Cosmer's Lab - France</span>
+        <p>Researched Visual SLAM techniques for maritime environments.</p>
+      </div>
+      <div class="card">
+        <h3>Innovation Engineer</h3>
+        <span class="card-meta">Nile University - Egypt</span>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>MSc. in Marine & Maritime Intelligent Robotics</h3>
+        <span class="card-meta">Toulon University (France) & Jaume I University (Spain) | 2021 - 2023</span>
+        <p><strong>Thesis:</strong> Underwater Multi-Cam Deep SLAM</p>
+      </div>
+      <div class="card">
+        <h3>BSc. in Electromechanical Engineering</h3>
+        <span class="card-meta">Alexandria University, Egypt | 2013 - 2018</span>
+        <p><strong>Thesis:</strong> RC Aircraft Design & Control</p>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Skills</h2>
+      <div class="card">
+        <p>
+          <strong>Core:</strong> Computer Vision, Deep Learning, SLAM, ROS1/2<br>
+          <strong>Languages:</strong> Python, C++, MATLAB<br>
+          <strong>Tools:</strong> Unity, Docker, Git, SolidWorks, Ansys CFD
         </p>
       </div>
-    </section>
-    <section class="slide-left">
-      <h2>Work Experience</h2>
-      <ul>
-        <li>Reseacher - DFKI - Germany (Present) </li>
-        <li>Computer Vision Intern - Hydromea SA - Switzerland</li>
-        <li>VSLAM Intern - Cosmer's Lab - France</li>
-        <li>Innovation Engineer - Nile University - Egypt</li>
-        <li>Research Assistant - Nile University - Egypt</li>
-        <li>Robotics Engineer - Innova STEM Education - Egypt</li>
-      </ul>
-    </section>
-
-    <section class="slide-right">
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <strong>MSc. in Marine & Maritime Intelligent Robotics - Erasmus Mundus Joint Master Degree</strong><br>
-          <em>Toulon University, France and Jaume I University, Spain (2021 - 2023)</em>
-          <ul>
-            <li><strong>Thesis:</strong> Underwater Multi-Cam Deep SLAM</li>
-          </ul>
-        </li>
-        <li>
-          <strong>BSc. in Electromechanical Engineering</strong><br>
-          <em>Alexandria University, Egypt (2013 - 2018)</em>
-          <ul>
-            <li><strong>Thesis:</strong> RC Aircraft</li>
-        </li>
-      </ul>
-    </section>
-
-
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="projects.html">UJI Butler</a></li>
-        <li><a href="projects.html">BlueROV2 Docking in Unity</a></li>
-        <li><a href="projects.html">RC Aircraft</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Computer Vision</li>
-        <li>Python</li>
-        <li>C++</li>
-        <li>ROS1/2</li>
-        <li>Deep Learning</li>
-        <li>Unity</li>
-        <li>Matlab</li>
-        <li>SolidWorks/Inventor</li>
-        <li>Ansys CFD</li>
-        <li>3D printing</li>
-      </ul>
-
     </section>
 
   </main>
 
   <footer>
     <p>Copyright &copy; <span id="year"></span> Ahmed Harbi</p>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 
   <script>
+    // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const currentTheme = localStorage.getItem('theme') || 'light';
@@ -184,12 +137,14 @@
     if (currentTheme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       themeIcon.textContent = '☀️';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
     }
 
     themeToggle.addEventListener('click', () => {
       const theme = document.documentElement.getAttribute('data-theme');
       if (theme === 'dark') {
-        document.documentElement.removeAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
         themeIcon.textContent = '🌙';
       } else {
@@ -198,25 +153,11 @@
         themeIcon.textContent = '☀️';
       }
     });
-  </script>
-  <script>
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-up').forEach(el => {
-      observer.observe(el);
-    });
+    // Year Update
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script src="particles.js"></script>
   <script type="module">
@@ -225,87 +166,82 @@
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
     const sharkCanvas = document.getElementById('shark-canvas');
-    const sharkScene = new THREE.Scene();
-    sharkScene.background = null;
+    if (sharkCanvas) {
+      const sharkScene = new THREE.Scene();
 
-    const sharkCamera = new THREE.PerspectiveCamera(45, sharkCanvas.clientWidth / sharkCanvas.clientHeight, 0.1, 1000);
-    sharkCamera.position.set(5, 3, 5);
-    sharkCamera.lookAt(0, 0, 0);
+      const sharkCamera = new THREE.PerspectiveCamera(45, sharkCanvas.clientWidth / sharkCanvas.clientHeight, 0.1, 1000);
+      sharkCamera.position.set(5, 3, 5);
+      sharkCamera.lookAt(0, 0, 0);
 
-    const sharkRenderer = new THREE.WebGLRenderer({
-      canvas: sharkCanvas,
-      antialias: true,
-      alpha: true
-    });
-    sharkRenderer.setSize(sharkCanvas.clientWidth, sharkCanvas.clientHeight);
-    sharkRenderer.setPixelRatio(window.devicePixelRatio);
-    sharkRenderer.setClearColor(0x000000, 0);
-
-    sharkRenderer.setClearColor(0x000000, 0);
-    const sharkAmbientLight = new THREE.AmbientLight(0xffffff, 1.0);
-    sharkScene.add(sharkAmbientLight);
-
-    const sharkDirectionalLight1 = new THREE.DirectionalLight(0xffffff, 1.0);
-    sharkDirectionalLight1.position.set(5, 5, 5);
-    sharkScene.add(sharkDirectionalLight1);
-
-    const sharkDirectionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
-    sharkDirectionalLight2.position.set(-5, 5, -5);
-    sharkScene.add(sharkDirectionalLight2);
-
-    sharkScene.add(sharkDirectionalLight2);
-    const sharkControls = new OrbitControls(sharkCamera, sharkRenderer.domElement);
-    sharkControls.enableDamping = true;
-    sharkControls.dampingFactor = 0.05;
-    sharkControls.autoRotate = true;
-    sharkControls.autoRotateSpeed = 2;
-
-    sharkControls.autoRotateSpeed = 2;
-
-    const sharkLoader = new GLTFLoader();
-    sharkLoader.load(
-      'hammerhead_shark.glb',
-      function (gltf) {
-        const model = gltf.scene;
-
-        const box = new THREE.Box3().setFromObject(model);
-        const center = box.getCenter(new THREE.Vector3());
-        const size = box.getSize(new THREE.Vector3());
-
-        model.traverse((child) => {
-          if (child.isMesh) {
-            child.position.x -= center.x;
-            child.position.y -= center.y;
-            child.position.z -= center.z;
-          }
-        });
-
-        model.position.set(0, 0, 0);
-
-        const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 6 / maxDim;
-        model.scale.setScalar(scale);
-
-        sharkScene.add(model);
-
-        function animate() {
-          requestAnimationFrame(animate);
-          sharkControls.update();
-          sharkRenderer.render(sharkScene, sharkCamera);
-        }
-        animate();
-      },
-      undefined,
-      function (error) {
-        console.error('Error loading shark model:', error);
-      }
-    );
-
-    window.addEventListener('resize', () => {
-      sharkCamera.aspect = sharkCanvas.clientWidth / sharkCanvas.clientHeight;
-      sharkCamera.updateProjectionMatrix();
+      const sharkRenderer = new THREE.WebGLRenderer({
+        canvas: sharkCanvas,
+        antialias: true,
+        alpha: true
+      });
       sharkRenderer.setSize(sharkCanvas.clientWidth, sharkCanvas.clientHeight);
-    });
+      sharkRenderer.setPixelRatio(window.devicePixelRatio);
+      sharkRenderer.setClearColor(0x000000, 0);
+
+      const sharkAmbientLight = new THREE.AmbientLight(0xffffff, 1.0);
+      sharkScene.add(sharkAmbientLight);
+
+      const sharkDirectionalLight1 = new THREE.DirectionalLight(0xffffff, 1.0);
+      sharkDirectionalLight1.position.set(5, 5, 5);
+      sharkScene.add(sharkDirectionalLight1);
+
+      const sharkDirectionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+      sharkDirectionalLight2.position.set(-5, 5, -5);
+      sharkScene.add(sharkDirectionalLight2);
+
+      const sharkControls = new OrbitControls(sharkCamera, sharkRenderer.domElement);
+      sharkControls.enableDamping = true;
+      sharkControls.dampingFactor = 0.05;
+      sharkControls.autoRotate = true;
+      sharkControls.autoRotateSpeed = 2;
+
+      const sharkLoader = new GLTFLoader();
+      sharkLoader.load(
+        'hammerhead_shark.glb',
+        function (gltf) {
+          const model = gltf.scene;
+          const box = new THREE.Box3().setFromObject(model);
+          const center = box.getCenter(new THREE.Vector3());
+          const size = box.getSize(new THREE.Vector3());
+
+          model.traverse((child) => {
+            if (child.isMesh) {
+              child.position.x -= center.x;
+              child.position.y -= center.y;
+              child.position.z -= center.z;
+            }
+          });
+
+          model.position.set(0, 0, 0);
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const scale = 6 / maxDim;
+          model.scale.setScalar(scale);
+
+          sharkScene.add(model);
+
+          function animate() {
+            requestAnimationFrame(animate);
+            sharkControls.update();
+            sharkRenderer.render(sharkScene, sharkCamera);
+          }
+          animate();
+        },
+        undefined,
+        function (error) {
+          console.error('Error loading shark model:', error);
+        }
+      );
+
+      window.addEventListener('resize', () => {
+        sharkCamera.aspect = sharkCanvas.clientWidth / sharkCanvas.clientHeight;
+        sharkCamera.updateProjectionMatrix();
+        sharkRenderer.setSize(sharkCanvas.clientWidth, sharkCanvas.clientHeight);
+      });
+    }
   </script>
 </body>
 

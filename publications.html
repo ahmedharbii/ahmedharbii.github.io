@@ -1,128 +1,131 @@
-<?php include 'header.php'; ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmed Harbi</title>
+  <title>Publications | Ahmed Harbi</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="logo.png">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <canvas id="particle-canvas"></canvas>
+
   <nav>
     <ul>
-      <li><a href="index.html" class="name">Ahmed Harbi Elsayed</a></li>
-      <!-- <li><a href="about.html">About</a></li> -->
+      <li><a href="index.html" class="name">Ahmed Harbi</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
-      <li class="github-container">
-        <a href="https://github.com/ahmedharbii">
-          <img src="https://github.com/fluidicon.png" alt="Github logo" class="logo">
-        </a>
-      </li>
-      <li class="linkedin-container ">
-        <a href="https://linkedin.com/in/ahmedharbii">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
-            alt="Linkedin logo" class="logo">
-        </a>
-      </li>
-      <li class="google-scholar-container">
-        <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
-            alt="Google Scholar logo" class="logo">
-        </a>
-      </li>
-      <li class="twitter-container">
-        <a href="https://twitter.com/AhmedHarbii10">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter logo"
-            class="logo">
-        </a>
-      </li>
     </ul>
+
+    <div class="social-icons">
+      <a href="https://github.com/ahmedharbii" aria-label="GitHub">
+        <img src="https://github.com/fluidicon.png" alt="GitHub">
+      </a>
+      <a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
+          alt="LinkedIn">
+      </a>
+      <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1024px-Google_Scholar_logo.svg.png"
+          alt="Scholar">
+      </a>
+      <a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Twitter_Logo_Blue.png" alt="Twitter">
+      </a>
+    </div>
+
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
       <span id="theme-icon">🌙</span>
     </button>
   </nav>
-  </header>
 
   <main>
-    <section class="publications">
+    <section>
       <h2 class="fade-in">Publications</h2>
-      <div id="publications-container">
-        <div class="publication fade-in">
+
+      <div class="publication-card fade-in">
+        <img class="publication-img" src="images/publications/uji_butler.png" alt="UJI-Butler">
+        <div class="publication-content">
           <h3 class="publication-title">UJI-Butler: A Symbolic/Non-symbolic Robotic System that Learns Through
             Multi-modal Interaction</h3>
-          <div class="publication-details">
-            <img class="publication-img" src="images/publications/uji_butler.png"
-              alt="UJI-Butler: A Symbolic/Non-symbolic Robotic System that Learns Through Multi-modal Interaction">
-            <div class="citation">
-              <p>Abdelrhman Bassiouny, <strong>Ahmed H Elsayed</strong>, Zoe Falomir, and Angel P del Pobil (2025).</p>
-              <p><i>International Journal of Social Robotics</i></p>
-              <p><a href="https://link.springer.com/article/10.1007/s12369-025-01234-5" target="_blank"
-                  style="color: var(--text-color); font-weight: bold;">View Publication →</a></p>
-            </div>
+          <div class="publication-meta">
+            Abdelrhman Bassiouny, <strong>Ahmed H Elsayed</strong>, Zoe Falomir, and Angel P del Pobil (2025)<br>
+            <em>International Journal of Social Robotics</em>
           </div>
+          <a href="https://link.springer.com/article/10.1007/s12369-025-01234-5" target="_blank"
+            class="publication-link">
+            View Publication →
+          </a>
         </div>
-        <div class="publication fade-in">
+      </div>
+
+      <div class="publication-card fade-in">
+        <img class="publication-img" src="images/publications/Interactive_Simulator_Framework.png"
+          alt="Interactive Simulator Framework">
+        <div class="publication-content">
           <h3 class="publication-title">Interactive Simulator Framework for XAI Applications in Aquatic Environments
           </h3>
-          <div class="publication-details">
-            <img class="publication-img" src="images/publications/Interactive_Simulator_Framework.png"
-              alt="Interactive Simulator Framework for XAI Applications in Aquatic Environments">
-            <div class="citation">
-              <p><strong>Ahmed H Elsayed</strong>, Tarek A El-Mihoub, Christoph Manss, Andre Miedtank, Lars Nolle, and
-                Frederic Stahl (2024).</p>
-              <p><i>Springer Nature Switzerland</i></p>
-              <p><a href="https://link.springer.com/chapter/10.1007/978-3-031-77915-2_11" target="_blank"
-                  style="color: var(--text-color); font-weight: bold;">View Publication →</a></p>
-            </div>
+          <div class="publication-meta">
+            <strong>Ahmed H Elsayed</strong>, Tarek A El-Mihoub, Christoph Manss, Andre Miedtank, Lars Nolle, and
+            Frederic Stahl (2024)<br>
+            <em>Springer Nature Switzerland</em>
           </div>
+          <a href="https://link.springer.com/chapter/10.1007/978-3-031-77915-2_11" target="_blank"
+            class="publication-link">
+            View Publication →
+          </a>
         </div>
-        <div class="publication fade-in">
+      </div>
+
+      <div class="publication-card fade-in">
+        <img class="publication-img" src="images/publications/Human-Robot_Collaboration.jpg"
+          alt="Human-Robot Collaboration">
+        <div class="publication-content">
           <h3 class="publication-title">Human-Robot Collaboration System Setup for Weed Harvesting Scenarios in Aquatic
             Lakes</h3>
-          <div class="publication-details">
-            <img class="publication-img" src="images/publications/Human-Robot_Collaboration.jpg"
-              alt="Human-Robot Collaboration System Setup for Weed Harvesting Scenarios in Aquatic Lakes">
-            <div class="citation">
-              <p><strong>Ahmed H Elsayed</strong>, Andrej Lejman, and Frederic Stahl (2024).</p>
-              <p><i>arXiv preprint arXiv:2410.17685</i></p>
-              <p><a href="https://arxiv.org/abs/2410.17685" target="_blank"
-                  style="color: var(--text-color); font-weight: bold;">View Publication →</a></p>
-            </div>
+          <div class="publication-meta">
+            <strong>Ahmed H Elsayed</strong>, Andrej Lejman, and Frederic Stahl (2024)<br>
+            <em>arXiv preprint arXiv:2410.17685</em>
           </div>
+          <a href="https://arxiv.org/abs/2410.17685" target="_blank" class="publication-link">
+            View Publication →
+          </a>
         </div>
-        <div class="publication fade-in">
+      </div>
+
+      <div class="publication-card fade-in">
+        <img class="publication-img" src="images/publications/pangasius_paper.png" alt="Pangasius Fish Robot">
+        <div class="publication-content">
           <h3 class="publication-title">Design and control of soft biomimetic pangasius fish robot using fin ray effect
             and reinforcement learning</h3>
-          <div class="publication-details">
-            <img class="publication-img" src="images/publications/pangasius_paper.png"
-              alt="Design and control of soft biomimetic pangasius fish robot using fin ray effect and reinforcement learning">
-            <div class="citation">
-              <p>Samuel M Youssef, MennaAllah Soliman, Mahmood A Saleh, <strong>Ahmed H Elsayed</strong>, and Ahmed G
-                Radwan (2022).</p>
-              <p><i>Scientific Reports</i></p>
-              <p><a href="https://www.nature.com/articles/s41598-022-26179-x" target="_blank"
-                  style="color: var(--text-color); font-weight: bold;">View Publication →</a></p>
-            </div>
+          <div class="publication-meta">
+            Samuel M Youssef, MennaAllah Soliman, Mahmood A Saleh, <strong>Ahmed H Elsayed</strong>, and Ahmed G Radwan
+            (2022)<br>
+            <em>Scientific Reports</em>
           </div>
+          <a href="https://www.nature.com/articles/s41598-022-26179-x" target="_blank" class="publication-link">
+            View Publication →
+          </a>
         </div>
+      </div>
+
     </section>
   </main>
+
   <footer>
     <p>Copyright &copy; <span id="year"></span> Ahmed Harbi</p>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="particles.js"></script>
   <script>
+    // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const currentTheme = localStorage.getItem('theme') || 'light';
@@ -130,12 +133,14 @@
     if (currentTheme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       themeIcon.textContent = '☀️';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
     }
 
     themeToggle.addEventListener('click', () => {
       const theme = document.documentElement.getAttribute('data-theme');
       if (theme === 'dark') {
-        document.documentElement.removeAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
         themeIcon.textContent = '🌙';
       } else {
@@ -144,24 +149,9 @@
         themeIcon.textContent = '☀️';
       }
     });
-  </script>
-  <script>
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-up').forEach(el => {
-      observer.observe(el);
-    });
+    // Year Update
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 
