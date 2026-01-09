@@ -140,18 +140,18 @@ def test_css_file_exists():
     print("Testing CSS...")
     root = get_project_root()
     
-    # Check if styles.css exists
-    css_file = root / 'styles.css'
-    assert css_file.exists(), "styles.css not found"
-    print("  ✓ styles.css exists")
+    # Check if styles.css exists in assets/css/
+    css_file = root / 'assets' / 'css' / 'styles.css'
+    assert css_file.exists(), "assets/css/styles.css not found"
+    print("  ✓ assets/css/styles.css exists")
     
     # Check if it's linked in HTML files
     pages = ['index.html', 'projects.html', 'publications.html', 'contact.html']
     for page in pages:
         content = read_html_file(page)
         if content:
-            assert 'styles.css' in content, f"{page}: styles.css not linked"
-            print(f"  ✓ {page} links to styles.css")
+            assert 'assets/css/styles.css' in content, f"{page}: styles.css not linked"
+            print(f"  ✓ {page} links to assets/css/styles.css")
     print()
 
 
@@ -220,10 +220,12 @@ def test_media_folder_structure():
     
     # Check for organized folders
     expected_folders = [
-        'images/home',
-        'images/publications',
-        'images/projects',
-        'media/press'
+        'assets/images/home',
+        'assets/images/publications',
+        'assets/images/projects',
+        'assets/css',
+        'assets/js',
+        'assets/icons'
     ]
     
     for folder in expected_folders:
