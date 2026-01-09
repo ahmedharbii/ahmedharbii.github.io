@@ -1,0 +1,48 @@
+{
+  "name": "Ahmed Harbi Elsayed - Robotics Researcher",
+  "short_name": "Ahmed Harbi",
+  "description": "Portfolio of Ahmed Harbi Elsayed, specializing in Marine and Maritime Intelligent Robotics, Computer Vision, and Deep Learning",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#38bdf8",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/rsz_logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "portfolio", "robotics"],
+  "shortcuts": [
+    {
+      "name": "Publications",
+      "short_name": "Papers",
+      "description": "View research publications",
+      "url": "/publications.html",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View robotics projects",
+      "url": "/projects.html",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "/contact.html",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192" }]
+    }
+  ]
+}
