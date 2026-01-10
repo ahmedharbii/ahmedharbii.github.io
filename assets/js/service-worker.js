@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portfolio-cache-v3';
+const CACHE_NAME = 'portfolio-cache-v5';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -8,16 +8,6 @@ const urlsToCache = [
   '/about.html',
   '/assets/css/styles.css',
   '/assets/js/particles.js',
-  '/assets/images/home/profile_pic.jpeg',
-  '/assets/icons/logo.png',
-  '/assets/icons/github-icon.png',
-  '/assets/icons/linkedin-icon.png',
-  '/assets/icons/scholar-icon.png',
-  '/assets/icons/twitter-icon.png',
-  '/assets/images/publications/uji_butler.png',
-  '/assets/images/publications/Interactive_Simulator_Framework.png',
-  '/assets/images/publications/Human-Robot_Collaboration.jpg',
-  '/assets/images/publications/pangasius_paper.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
   'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js'
 ];
@@ -54,38 +44,36 @@ self.addEventListener('activate', event => {
   return self.clients.claim();
 });
 
-// Fetch strategy: Cache first, then network
+// Fetch strategy: Let images bypass service worker, cache others
 self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+  
+  // Skip service worker entirely for images - let them load normally
+  if (event.request.destination === 'image' || url.pathname.match(/\.(jpg|jpeg|png|gif|svg|webp|ico)$/i)) {
+    return; // Don't intercept image requests at all
+  }
+  
+  // Cache-first for other resources (CSS, JS, HTML)
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // Cache hit - return response from cache
         if (response) {
           return response;
         }
         
-        // Clone the request
-        const fetchRequest = event.request.clone();
-        
-        return fetch(fetchRequest).then(response => {
-          // Check if valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
+        return fetch(event.request).then(response => {
+          if (!response || response.status !== 200) {
             return response;
           }
           
-          // Clone the response
           const responseToCache = response.clone();
-          
-          // Cache new resources dynamically
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              cache.put(event.request, responseToCache);
-            });
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseToCache);
+          });
           
           return response;
         }).catch(() => {
-          // Return offline page or fallback for HTML requests
-          if (event.request.headers.get('accept').includes('text/html')) {
+          if (event.request.headers.get('accept')?.includes('text/html')) {
             return caches.match('/index.html');
           }
         });
