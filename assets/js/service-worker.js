@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portfolio-cache-v2';
+const CACHE_NAME = 'portfolio-cache-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -10,6 +10,14 @@ const urlsToCache = [
   '/assets/js/particles.js',
   '/assets/images/home/profile_pic.jpeg',
   '/assets/icons/logo.png',
+  '/assets/icons/github-icon.png',
+  '/assets/icons/linkedin-icon.png',
+  '/assets/icons/scholar-icon.png',
+  '/assets/icons/twitter-icon.png',
+  '/assets/images/publications/uji_butler.png',
+  '/assets/images/publications/Interactive_Simulator_Framework.png',
+  '/assets/images/publications/Human-Robot_Collaboration.jpg',
+  '/assets/images/publications/pangasius_paper.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
   'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js'
 ];
