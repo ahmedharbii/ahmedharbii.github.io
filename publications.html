@@ -12,9 +12,9 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="canonical" href="https://ahmedharbii.github.io/publications.html">
-  <link rel="icon" href="assets/icons/logo.png">
+  <link rel="icon" href="/assets/icons/logo.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#38bdf8">
   <meta name="description"
@@ -50,26 +50,26 @@
       <span></span>
     </button>
 
-    <a href="index.html" class="name" style="position: relative; z-index: 1001;">Ahmed Harbi Elsayed</a>
+    <a href="index.html" class="name">Ahmed Harbi Elsayed</a>
 
     <ul id="nav-menu">
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="projects.html">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
 
     <div class="social-icons">
       <a href="https://github.com/ahmedharbii" aria-label="GitHub">
-        <img src="assets/icons/github-icon.png" alt="GitHub">
+        <img src="/assets/icons/github-icon.png" alt="GitHub">
       </a>
       <a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
-        <img src="assets/icons/linkedin-icon.png" alt="LinkedIn">
+        <img src="/assets/icons/linkedin-icon.png" alt="LinkedIn">
       </a>
       <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
-        <img src="assets/icons/scholar-icon.png" alt="Scholar">
+        <img src="/assets/icons/scholar-icon.png" alt="Scholar">
       </a>
       <a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
-        <img src="assets/icons/twitter-icon.png" alt="Twitter">
+        <img src="/assets/icons/twitter-icon.png" alt="Twitter">
       </a>
     </div>
 
@@ -83,7 +83,7 @@
       <h2 class="fade-in">Publications</h2>
 
       <div class="publication-card fade-in">
-        <img class="publication-img" src="assets/images/publications/uji_butler.png" alt="UJI-Butler">
+        <img class="publication-img" src="/assets/images/publications/uji_butler.png" alt="UJI-Butler">
         <div class="publication-content">
           <h3 class="publication-title">UJI-Butler: A Symbolic/Non-symbolic Robotic System that Learns Through
             Multi-modal Interaction</h3>
@@ -99,7 +99,7 @@
       </div>
 
       <div class="publication-card fade-in" id="interactive-sim-framework">
-        <img class="publication-img" src="assets/images/publications/Interactive_Simulator_Framework.png"
+        <img class="publication-img" src="/assets/images/publications/Interactive_Simulator_Framework.png"
           alt="Interactive Simulator Framework">
         <div class="publication-content">
           <h3 class="publication-title">Interactive Simulator Framework for XAI Applications in Aquatic Environments
@@ -117,7 +117,7 @@
       </div>
 
       <div class="publication-card fade-in">
-        <img class="publication-img" src="assets/images/publications/Human-Robot_Collaboration.jpg"
+        <img class="publication-img" src="/assets/images/publications/Human-Robot_Collaboration.jpg"
           alt="Human-Robot Collaboration">
         <div class="publication-content">
           <h3 class="publication-title">Human-Robot Collaboration System Setup for Weed Harvesting Scenarios in Aquatic
@@ -133,7 +133,7 @@
       </div>
 
       <div class="publication-card fade-in">
-        <img class="publication-img" src="assets/images/publications/pangasius_paper.png" alt="Pangasius Fish Robot">
+        <img class="publication-img" src="/assets/images/publications/pangasius_paper.png" alt="Pangasius Fish Robot">
         <div class="publication-content">
           <h3 class="publication-title">Design and control of soft biomimetic pangasius fish robot using fin ray effect
             and reinforcement learning</h3>
@@ -157,7 +157,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script src="assets/js/particles.js"></script>
+  <script src="/assets/js/particles.js"></script>
   <script>
     // Hamburger Menu Toggle
     const hamburger = document.getElementById('hamburger');
@@ -211,6 +211,16 @@
 
     // Year Update
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lazy Load Images
+    document.querySelectorAll('img').forEach(img => {
+      img.loading = 'lazy';
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', () => img.classList.add('loaded'));
+      }
+    });
 
     // Service Worker disabled - was causing image caching issues
     // if ('serviceWorker' in navigator) {

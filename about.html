@@ -12,9 +12,9 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="canonical" href="https://ahmedharbii.github.io/about.html">
-  <link rel="icon" href="assets/icons/logo.png">
+  <link rel="icon" href="/assets/icons/logo.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#38bdf8">
   <meta name="description"
@@ -53,6 +53,16 @@
   </nav>
 
   <script>
+    // Lazy Load Images
+    document.querySelectorAll('img').forEach(img => {
+      img.loading = 'lazy';
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', () => img.classList.add('loaded'));
+      }
+    });
+
     // Service Worker disabled - was causing image caching issues
     // if ('serviceWorker' in navigator) {
     //   window.addEventListener('load', () => {
@@ -64,5 +74,5 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script src="assets/js/particles.js"></script>
+  <script src="/assets/js/particles.js"></script>
 </body>
