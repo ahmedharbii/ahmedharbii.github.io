@@ -135,11 +135,10 @@
     </section>
 
     <canvas id="shark-canvas"
-      style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
-    <p class="shark-attribution"
-      style="position: fixed; bottom: 10px; right: 10px; width: auto; text-align: right; opacity: 0.5; z-index: 10;">
+      style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+    <p class="shark-attribution">
       <a href="https://skfb.ly/6VoZC" target="_blank" rel="noopener noreferrer">"Great Hammerhead Shark"</a> by
-      DigitalLife3D (CC BY-NC 4.0)
+      DigitalLife3D
     </p>
 
     <section class="fade-in">
@@ -370,7 +369,7 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script src="/assets/js/particles.js"></script>
+  <script src="/assets/js/particles.js" defer></script>
   <script type="module">
     import * as THREE from 'three';
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -412,7 +411,7 @@
 
       const sharkLoader = new GLTFLoader();
       sharkLoader.load(
-        'models/hammerhead_shark.glb',
+        '/docs/models/hammerhead_shark.glb',
         function (gltf) {
           const model = gltf.scene;
           const box = new THREE.Box3().setFromObject(model);
