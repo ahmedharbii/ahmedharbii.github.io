@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -18,41 +18,223 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#38bdf8">
   <meta name="description"
-    content="About Ahmed Harbi Elsayed, a Robotics Researcher specializing in Marine and Maritime Intelligent Robotics.">
-  <meta name="keywords" content="Ahmed Harbi Elsayed, Ahmed Harbi, About, Biography, Robotics, Computer Vision, AI">
+    content="Ahmed Harbi Elsayed is a Robotics Researcher at DFKI specializing in Marine Robotics, Computer Vision, SLAM, and Explainable AI in underwater environments.">
+  <meta name="keywords" content="Ahmed Harbi Elsayed, Ahmed Harbi, About, Biography, Robotics, Computer Vision, AI, DFKI, Marine Robotics, SLAM">
   <meta name="author" content="Ahmed Harbi Elsayed">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="profile">
   <meta property="og:url" content="https://ahmedharbii.github.io/about.html">
-  <meta property="og:title" content="About | Ahmed Harbi Elsayed">
-  <meta property="og:description" content="Learn more about Ahmed Harbi Elsayed.">
+  <meta property="og:title" content="About Ahmed Harbi Elsayed | Robotics Researcher at DFKI">
+  <meta property="og:description" content="Ahmed Harbi Elsayed is a Robotics Researcher at DFKI specializing in Marine Robotics, Computer Vision, SLAM, and Explainable AI in underwater environments.">
   <meta property="og:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://ahmedharbii.github.io/about.html">
-  <meta property="twitter:title" content="About | Ahmed Harbi Elsayed">
-  <meta property="twitter:description" content="Learn more about Ahmed Harbi Elsayed.">
+  <meta property="twitter:title" content="About Ahmed Harbi Elsayed | Robotics Researcher at DFKI">
+  <meta property="twitter:description" content="Ahmed Harbi Elsayed is a Robotics Researcher at DFKI specializing in Marine Robotics, Computer Vision, SLAM, and Explainable AI in underwater environments.">
   <meta property="twitter:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ahmed Harbi Elsayed",
+    "url": "https://ahmedharbii.github.io/about.html",
+    "image": "https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg",
+    "jobTitle": "Robotics Researcher",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "DFKI - German Research Center for Artificial Intelligence"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Toulon University"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Jaume I University"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "German University in Cairo"
+      }
+    ],
+    "sameAs": [
+      "https://github.com/ahmedharbii",
+      "https://linkedin.com/in/ahmedharbii",
+      "https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en",
+      "https://twitter.com/AhmedHarbii10"
+    ],
+    "knowsAbout": ["Robotics", "Computer Vision", "Deep Learning", "Marine Robotics", "SLAM", "ROS", "Unity", "Explainable AI"]
+  }
+  </script>
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <canvas id="particle-canvas"></canvas>
+
   <nav>
-    <ul>
-      <li><a href="/" class="name">Ahmed Harbi Elsayed</a></li>
-      <!-- <li><a href="about.html">About</a></li> -->
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="projects.html">Projects</a></li>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="/" class="name">Ahmed Harbi Elsayed</a>
+
+    <ul id="nav-menu">
       <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <div class="social-icons">
+      <a href="https://github.com/ahmedharbii" aria-label="GitHub">
+        <img src="/assets/icons/github-icon.png" alt="GitHub">
+      </a>
+      <a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
+        <img src="/assets/icons/linkedin-icon.png" alt="LinkedIn">
+      </a>
+      <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
+        <img src="/assets/icons/scholar-icon.png" alt="Scholar">
+      </a>
+      <a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
+        <img src="/assets/icons/twitter-icon.png" alt="Twitter">
+      </a>
+    </div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <span id="theme-icon">🌙</span>
+    </button>
   </nav>
 
+  <main>
+    <section class="profile-section fade-in">
+      <div class="profile-pic">
+        <img src="/assets/images/home/profile_pic.jpeg" alt="Ahmed Harbi Elsayed">
+      </div>
+      <div class="intro-text">
+        <h1>About Me</h1>
+        <p>Robotics Researcher at DFKI — German Research Center for Artificial Intelligence.</p>
+        <p>MSc. in Marine and Maritime Intelligent Robotics (Toulon University &amp; Jaume I University).</p>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Bio</h2>
+      <div class="card">
+        <p>
+          I am a Robotics Researcher at <strong>DFKI (German Research Center for Artificial Intelligence)</strong>,
+          where I work on Explainable AI applied to marine and underwater robotic systems. My research bridges
+          computer vision, deep learning, and autonomous underwater vehicles to make robotic decision-making
+          more transparent and interpretable.
+        </p>
+        <p>
+          I hold an MSc. in Marine and Maritime Intelligent Robotics from a dual-degree program at
+          <strong>Toulon University (France)</strong> and <strong>Jaume I University (Spain)</strong>, where my
+          thesis focused on Underwater Multi-Cam Deep SLAM. Prior to that, I earned a BSc. in
+          Electromechanical Engineering from <strong>Alexandria University, Egypt</strong> — graduating with an
+          award-winning project that placed 1st in the SAE Aero Design 2018 competition.
+        </p>
+        <p>
+          Beyond research, I have contributed to underwater simulators, autonomous surface vehicles, and
+          human-robot collaboration systems — with work published in journals including
+          <em>Scientific Reports</em> and <em>International Journal of Social Robotics</em>.
+        </p>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Research Interests</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Marine &amp; Underwater Robotics</strong> — AUVs, ROVs, autonomous surface vehicles</li>
+          <li><strong>Computer Vision &amp; SLAM</strong> — visual odometry, underwater multi-camera deep SLAM</li>
+          <li><strong>Explainable AI (XAI)</strong> — interpretable models for aquatic environments</li>
+          <li><strong>Human-Robot Collaboration</strong> — gesture-based interaction, sign language recognition</li>
+          <li><strong>Simulation</strong> — Unity-based underwater and robotics simulators</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Get in Touch</h2>
+      <div class="card">
+        <p>
+          Interested in collaboration, research discussions, or opportunities?
+          Feel free to reach out via <a href="contact.html">the contact page</a> or connect on
+          <a href="https://linkedin.com/in/ahmedharbii" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+          You can also explore my <a href="publications.html">publications</a> and
+          <a href="projects.html">projects</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright &copy; <span id="year"></span> Ahmed Harbi Elsayed</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="/assets/js/particles.js"></script>
   <script>
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.textContent = '☀️';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        themeIcon.textContent = '🌙';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.textContent = '☀️';
+      }
+    });
+
+    // Year Update
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     // Lazy Load Images
     document.querySelectorAll('img').forEach(img => {
       img.loading = 'lazy';
@@ -62,17 +244,7 @@
         img.addEventListener('load', () => img.classList.add('loaded'));
       }
     });
-
-    // Service Worker disabled - was causing image caching issues
-    // if ('serviceWorker' in navigator) {
-    //   window.addEventListener('load', () => {
-    //     navigator.serviceWorker.register('/assets/js/service-worker.js')
-    //       .then(registration => console.log('Service Worker registered:', registration.scope))
-    //       .catch(error => console.log('Service Worker registration failed:', error));
-    //   });
-    // }
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script src="/assets/js/particles.js"></script>
 </body>
+
+</html>

@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /index.html
 
 Sitemap: https://ahmedharbii.github.io/sitemap.xml
