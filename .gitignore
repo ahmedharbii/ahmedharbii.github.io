@@ -14,9 +14,14 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+vendor/
+.bundle/
 
-# Generated data
-_data/
+# Local Scholar fetch draft (validate, then move entries into publications.yml)
+_data/publications.draft.yml
+
+# Stale data dir from a previous site version under docs/ (not used by the build)
+docs/_data/
 
 # IDE
 .vscode/

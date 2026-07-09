@@ -1,2 +1,3 @@
 scholarly
 PyYAML
+requests

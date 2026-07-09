@@ -1,347 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Projects | Ahmed Harbi Elsayed
+description: Projects by Ahmed Harbi Elsayed, showcasing work in Robotics, Computer Vision, and AI.
+keywords: Ahmed Harbi Elsayed, Ahmed Harbi, Projects, Robotics, Computer Vision, AI, Portfolio
+og_title: Projects | Ahmed Harbi Elsayed
+og_description: Explore the robotics and AI projects of Ahmed Harbi Elsayed.
+---
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Robotics and AI Projects by Ahmed Harbi Elsayed",
+  "url": "https://ahmedharbii.github.io/projects.html",
+  "author": {
+    "@type": "Person",
+    "name": "Ahmed Harbi Elsayed",
+    "url": "https://ahmedharbii.github.io"
+  },
+  "itemListElement": [
+    {
+      "@type": "SoftwareApplication",
+      "position": 1,
+      "name": "Interactive Simulator Framework for XAI",
+      "description": "Interactive Simulator Framework for XAI Applications in Aquatic Environments.",
+      "applicationCategory": "Robotics Simulation"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "position": 2,
+      "name": "UJI Butler",
+      "description": "Sign Language Recognition using YoloV7 to detect hand gestures and give commands to UR5 robot arm to serve coffee.",
+      "applicationCategory": "Human-Robot Interaction"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "position": 3,
+      "name": "UnityUWSIM - Underwater Simulator",
+      "description": "Comprehensive underwater simulator using Unity featuring BlueROV2, docking stations, obstacles, and marine life.",
+      "url": "https://github.com/ahmedharbii/UnityUWSIM",
+      "applicationCategory": "Robotics Simulation"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "position": 4,
+      "name": "Deep Visual Odometry (DVO)",
+      "description": "Synthetic dataset collection pipeline using Unity and Deep Visual Odometry on BlueROV2 for underwater navigation.",
+      "applicationCategory": "Computer Vision"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "position": 5,
+      "name": "Autonomous Surface Vehicle (ASV)",
+      "description": "Autonomous DDBoat for trajectory following in open water environments. 1st Place at MIR Championship 2022.",
+      "applicationCategory": "Marine Robotics"
+    }
+  ]
+}
+</script>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Projects | Ahmed Harbi Elsayed</title>
-	<script>
-		// Prevent theme flash by setting theme immediately
-		(function() {
-			const theme = localStorage.getItem('theme') || 'light';
-			document.documentElement.setAttribute('data-theme', theme);
-		})();
-	</script>
-	<link rel="stylesheet" href="/assets/css/styles.css">
-	<link rel="canonical" href="https://ahmedharbii.github.io/projects.html">
-	<link rel="icon" href="/assets/icons/logo.png">
-	<link rel="manifest" href="/manifest.json">
-	<meta name="theme-color" content="#38bdf8">
-	<meta name="description"
-		content="Projects by Ahmed Harbi Elsayed, showcasing work in Robotics, Computer Vision, and AI.">
-	<meta name="keywords"
-		content="Ahmed Harbi Elsayed, Ahmed Harbi, Projects, Robotics, Computer Vision, AI, Portfolio">
-	<meta name="author" content="Ahmed Harbi Elsayed">
+<section class="projects">
+  <h1 class="fade-in">Projects</h1>
+  <h2 class="fade-in">Recent Projects</h2>
 
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://ahmedharbii.github.io/projects.html">
-	<meta property="og:title" content="Projects | Ahmed Harbi Elsayed">
-	<meta property="og:description" content="Explore the robotics and AI projects of Ahmed Harbi Elsayed.">
-	<meta property="og:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
+  <div class="card">
+    <h3>Interactive Simulator Framework for XAI</h3>
+    <p>Interactive Simulator Framework for XAI Applications in Aquatic Environments.</p>
+    <p><a href="publications.html#interactive-sim-framework">View Related Publication</a></p>
+    <div class="video-container"
+      style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
+      <iframe src="https://www.youtube.com/embed/jrJs4kzOeGI"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
 
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://ahmedharbii.github.io/projects.html">
-	<meta property="twitter:title" content="Projects | Ahmed Harbi Elsayed">
-	<meta property="twitter:description" content="Explore the robotics and AI projects of Ahmed Harbi Elsayed.">
-	<meta property="twitter:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
+  <div class="card">
+    <h3>UJI Butler</h3>
+    <p>Sign Language Recognition using YoloV7 to detect hand gestures and give commands to UR5 robot arm to
+      serve coffee. After that, UR5 gives the coffee to kobuki robot to deliver it to the customer.</p>
+    <div class="video-container"
+      style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
+      <iframe src="https://www.youtube.com/embed/iXYfxaN-TXU"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
 
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <div class="card">
+    <h3>UnityUWSIM - Underwater Simulator</h3>
+    <span class="card-meta">2023</span>
+    <p>Developed a comprehensive underwater simulator using Unity that served as the competition platform for the 2nd MIR Annual Symposium Robotics Challenge at UJI, Spain. The simulator features a realistic underwater environment based on CIRTESU Lab with BlueROV2, docking stations, obstacles, and marine life for testing autonomous navigation and visual servoing algorithms.</p>
+    <p><a href="https://github.com/ahmedharbii/UnityUWSIM" target="_blank" rel="noopener noreferrer" class="publication-link">View on GitHub →</a></p>
+    <div class="video-container"
+      style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
+      <iframe src="https://www.youtube.com/embed/v4bm29MwCQ8"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
 
-	<!-- JSON-LD Structured Data -->
-	<script type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@type": "ItemList",
-	  "name": "Robotics and AI Projects by Ahmed Harbi Elsayed",
-	  "url": "https://ahmedharbii.github.io/projects.html",
-	  "author": {
-	    "@type": "Person",
-	    "name": "Ahmed Harbi Elsayed",
-	    "url": "https://ahmedharbii.github.io"
-	  },
-	  "itemListElement": [
-	    {
-	      "@type": "SoftwareApplication",
-	      "position": 1,
-	      "name": "Interactive Simulator Framework for XAI",
-	      "description": "Interactive Simulator Framework for XAI Applications in Aquatic Environments.",
-	      "applicationCategory": "Robotics Simulation"
-	    },
-	    {
-	      "@type": "SoftwareApplication",
-	      "position": 2,
-	      "name": "UJI Butler",
-	      "description": "Sign Language Recognition using YoloV7 to detect hand gestures and give commands to UR5 robot arm to serve coffee.",
-	      "applicationCategory": "Human-Robot Interaction"
-	    },
-	    {
-	      "@type": "SoftwareApplication",
-	      "position": 3,
-	      "name": "UnityUWSIM - Underwater Simulator",
-	      "description": "Comprehensive underwater simulator using Unity featuring BlueROV2, docking stations, obstacles, and marine life.",
-	      "url": "https://github.com/ahmedharbii/UnityUWSIM",
-	      "applicationCategory": "Robotics Simulation"
-	    },
-	    {
-	      "@type": "SoftwareApplication",
-	      "position": 4,
-	      "name": "Deep Visual Odometry (DVO)",
-	      "description": "Synthetic dataset collection pipeline using Unity and Deep Visual Odometry on BlueROV2 for underwater navigation.",
-	      "applicationCategory": "Computer Vision"
-	    },
-	    {
-	      "@type": "SoftwareApplication",
-	      "position": 5,
-	      "name": "Autonomous Surface Vehicle (ASV)",
-	      "description": "Autonomous DDBoat for trajectory following in open water environments. 1st Place at MIR Championship 2022.",
-	      "applicationCategory": "Marine Robotics"
-	    }
-	  ]
-	}
-	</script>
+  <div class="card">
+    <h3>Deep Visual Odometry (DVO)</h3>
+    <span class="card-meta">MSc Project | 2023</span>
+    <p>Developed synthetic dataset collection pipeline using Unity and implemented Deep Visual Odometry on BlueROV2 with Unity Robotics integration for underwater navigation.</p>
+    <img src="/assets/images/projects/unity_simulator.jpeg" alt="Unity Underwater Simulator" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 1rem;">
+  </div>
 
-	<script type="importmap">
-		{
-			"imports": {
-				"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-				"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-			}
-		}
-	</script>
-</head>
+  <div class="card">
+    <h3>Autonomous Surface Vehicle (ASV)</h3>
+    <span class="card-meta">MSc Project | 2022</span>
+    <p>Designed and programmed an autonomous DDBoat for trajectory following in open water environments.</p>
+    <div class="project-achievements">
+      <p><strong>🏆 Achievement:</strong></p>
+      <ul>
+        <li><strong>1st Place</strong> - MIR Championship at Lac de Guélédan, France (2022)</li>
+      </ul>
+    </div>
+  </div>
 
-<body>
-	<canvas id="particle-canvas"></canvas>
+  <div class="card">
+    <h3>RC Aircraft - Graduation Project</h3>
+    <span class="card-meta">2018 | Grade: Excellent</span>
+    <p>Designed and manufactured a remotely controlled aircraft as my BSc graduation project. Led tail design and conducted complete CFD analysis using Ansys for aerodynamic optimization.</p>
+    <div class="project-achievements">
+      <p><strong>🏆 Major Achievements:</strong></p>
+      <ul>
+        <li><strong>Best Engineering Graduation Project of the Year (2018)</strong> in Egypt</li>
+        <li><strong>1st Place in Technical Design Report</strong> - SAE Aero Design 2018 Competition (Advanced Class)</li>
+        <li>Competed in Van Nuys, California, USA among 37 international universities</li>
+      </ul>
+    </div>
+    <div class="video-container"
+      style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
+      <iframe src="https://www.youtube.com/embed/OFFzbm5mgCk"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
 
-	<nav>
-		<button class="hamburger" id="hamburger" aria-label="Toggle menu">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
+</section>
 
-		<a href="/" class="name">Ahmed Harbi Elsayed</a>
+<section class="projects">
+  <h2 class="fade-in">Earlier Projects</h2>
 
-		<ul id="nav-menu">
-			<li><a href="publications.html">Publications</a></li>
-			<li><a href="projects.html">Projects</a></li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
+  <div class="card">
+    <h3>RaptorII ROV</h3>
+    <span class="card-meta">2017</span>
+    <p>Designed and manufactured a remotely operated vehicle (ROV) to participate in MATE Regional Competition. Built the mechanical structure and integrated control systems for underwater operations.</p>
+  </div>
 
-		<div class="social-icons">
-			<a href="https://github.com/ahmedharbii" aria-label="GitHub">
-				<img src="/assets/icons/github-icon.png" alt="GitHub">
-			</a>
-			<a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
-				<img src="/assets/icons/linkedin-icon.png" alt="LinkedIn">
-			</a>
-			<a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
-				<img src="/assets/icons/scholar-icon.png" alt="Scholar">
-			</a>
-			<a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
-				<img src="/assets/icons/twitter-icon.png" alt="Twitter">
-			</a>
-		</div>
+  <div class="card">
+    <h3>Mass Airflow Sensor (MAF)</h3>
+    <span class="card-meta">2017</span>
+    <p>Designed and programmed a Mass Airflow Sensor for data acquisition project. Implemented sensor calibration and real-time data logging capabilities.</p>
+  </div>
 
-		<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-			<span id="theme-icon">🌙</span>
-		</button>
-	</nav>
+  <div class="card">
+    <h3>Quadcopter</h3>
+    <span class="card-meta">2017</span>
+    <p>Designed and manufactured a quadcopter drone in AAST workshop. Built the frame, integrated flight controller, and tuned PID parameters for stable flight.</p>
+  </div>
 
-	<main>
-		<section class="projects">
-			<h1 class="fade-in">Projects</h1>
-			<h2 class="fade-in">Recent Projects</h2>
+  <div class="card">
+    <h3>Raptor I ROV</h3>
+    <span class="card-meta">2016</span>
+    <p>Designed and manufactured the first generation ROV to participate in MATE Regional Competition. Initial exploration into underwater robotics and vehicle control.</p>
+  </div>
 
-			<div class="card">
-				<h3>Interactive Simulator Framework for XAI</h3>
-				<p>Interactive Simulator Framework for XAI Applications in Aquatic Environments.</p>
-				<p><a href="publications.html#interactive-sim-framework">View Related Publication</a></p>
-				<div class="video-container"
-					style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
-					<iframe src="https://www.youtube.com/embed/jrJs4kzOeGI"
-						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-				</div>
-			</div>
+  <div class="card">
+    <h3>PV Solar Panel</h3>
+    <span class="card-meta">2016</span>
+    <p>Manufactured and welded a 250-watt photovoltaic solar panel at Tiba Solar Factory. Gained hands-on experience in renewable energy technology and manufacturing processes.</p>
+  </div>
 
-			<div class="card">
-				<h3>UJI Butler</h3>
-				<p>Sign Language Recognition using YoloV7 to detect hand gestures and give commands to UR5 robot arm to
-					serve coffee. After that, UR5 gives the coffee to kobuki robot to deliver it to the customer.</p>
-				<div class="video-container"
-					style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
-					<iframe src="https://www.youtube.com/embed/iXYfxaN-TXU"
-						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-				</div>
-			</div>
-
-			<div class="card">
-				<h3>UnityUWSIM - Underwater Simulator</h3>
-				<span class="card-meta">2023</span>
-				<p>Developed a comprehensive underwater simulator using Unity that served as the competition platform for the 2nd MIR Annual Symposium Robotics Challenge at UJI, Spain. The simulator features a realistic underwater environment based on CIRTESU Lab with BlueROV2, docking stations, obstacles, and marine life for testing autonomous navigation and visual servoing algorithms.</p>
-				<p><a href="https://github.com/ahmedharbii/UnityUWSIM" target="_blank" rel="noopener noreferrer" class="publication-link">View on GitHub →</a></p>
-				<div class="video-container"
-					style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
-					<iframe src="https://www.youtube.com/embed/v4bm29MwCQ8"
-						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-				</div>
-			</div>
-
-			<div class="card">
-				<h3>Deep Visual Odometry (DVO)</h3>
-				<span class="card-meta">MSc Project | 2023</span>
-				<p>Developed synthetic dataset collection pipeline using Unity and implemented Deep Visual Odometry on BlueROV2 with Unity Robotics integration for underwater navigation.</p>
-				<img src="/assets/images/projects/unity_simulator.jpeg" alt="Unity Underwater Simulator" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 1rem;">
-			</div>
-
-			<div class="card">
-				<h3>Autonomous Surface Vehicle (ASV)</h3>
-				<span class="card-meta">MSc Project | 2022</span>
-				<p>Designed and programmed an autonomous DDBoat for trajectory following in open water environments.</p>
-				<div class="project-achievements">
-					<p><strong>🏆 Achievement:</strong></p>
-					<ul>
-						<li><strong>1st Place</strong> - MIR Championship at Lac de Guélédan, France (2022)</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="card">
-				<h3>RC Aircraft - Graduation Project</h3>
-				<span class="card-meta">2018 | Grade: Excellent</span>
-				<p>Designed and manufactured a remotely controlled aircraft as my BSc graduation project. Led tail design and conducted complete CFD analysis using Ansys for aerodynamic optimization.</p>
-				<div class="project-achievements">
-					<p><strong>🏆 Major Achievements:</strong></p>
-					<ul>
-						<li><strong>Best Engineering Graduation Project of the Year (2018)</strong> in Egypt</li>
-						<li><strong>1st Place in Technical Design Report</strong> - SAE Aero Design 2018 Competition (Advanced Class)</li>
-						<li>Competed in Van Nuys, California, USA among 37 international universities</li>
-					</ul>
-				</div>
-				<div class="video-container"
-					style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
-					<iframe src="https://www.youtube.com/embed/OFFzbm5mgCk"
-						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-				</div>
-			</div>
-
-		</section>
-
-		<section class="projects">
-			<h2 class="fade-in">Earlier Projects</h2>
-
-			<div class="card">
-				<h3>RaptorII ROV</h3>
-				<span class="card-meta">2017</span>
-				<p>Designed and manufactured a remotely operated vehicle (ROV) to participate in MATE Regional Competition. Built the mechanical structure and integrated control systems for underwater operations.</p>
-			</div>
-
-			<div class="card">
-				<h3>Mass Airflow Sensor (MAF)</h3>
-				<span class="card-meta">2017</span>
-				<p>Designed and programmed a Mass Airflow Sensor for data acquisition project. Implemented sensor calibration and real-time data logging capabilities.</p>
-			</div>
-
-			<div class="card">
-				<h3>Quadcopter</h3>
-				<span class="card-meta">2017</span>
-				<p>Designed and manufactured a quadcopter drone in AAST workshop. Built the frame, integrated flight controller, and tuned PID parameters for stable flight.</p>
-			</div>
-
-			<div class="card">
-				<h3>Raptor I ROV</h3>
-				<span class="card-meta">2016</span>
-				<p>Designed and manufactured the first generation ROV to participate in MATE Regional Competition. Initial exploration into underwater robotics and vehicle control.</p>
-			</div>
-
-			<div class="card">
-				<h3>PV Solar Panel</h3>
-				<span class="card-meta">2016</span>
-				<p>Manufactured and welded a 250-watt photovoltaic solar panel at Tiba Solar Factory. Gained hands-on experience in renewable energy technology and manufacturing processes.</p>
-			</div>
-
-		</section>
-	</main>
-
-	<footer>
-		<p>Copyright &copy; <span id="year"></span> Ahmed Harbi Elsayed</p>
-	</footer>
-
-	<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-	<script src="/assets/js/particles.js"></script>
-	<script>
-		// Hamburger Menu Toggle
-		const hamburger = document.getElementById('hamburger');
-		const navMenu = document.getElementById('nav-menu');
-
-		hamburger.addEventListener('click', () => {
-			hamburger.classList.toggle('active');
-			navMenu.classList.toggle('active');
-		});
-
-		// Close menu when clicking on a link
-		document.querySelectorAll('#nav-menu a').forEach(link => {
-			link.addEventListener('click', () => {
-				hamburger.classList.remove('active');
-				navMenu.classList.remove('active');
-			});
-		});
-
-		// Close menu when clicking outside
-		document.addEventListener('click', (e) => {
-			if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-				hamburger.classList.remove('active');
-				navMenu.classList.remove('active');
-			}
-		});
-
-		// Theme Toggle Logic
-		const themeToggle = document.getElementById('theme-toggle');
-		const themeIcon = document.getElementById('theme-icon');
-		const currentTheme = localStorage.getItem('theme') || 'light';
-
-		if (currentTheme === 'dark') {
-			document.documentElement.setAttribute('data-theme', 'dark');
-			themeIcon.textContent = '☀️';
-		} else {
-			document.documentElement.setAttribute('data-theme', 'light');
-		}
-
-		themeToggle.addEventListener('click', () => {
-			const theme = document.documentElement.getAttribute('data-theme');
-			if (theme === 'dark') {
-				document.documentElement.setAttribute('data-theme', 'light');
-				localStorage.setItem('theme', 'light');
-				themeIcon.textContent = '🌙';
-			} else {
-				document.documentElement.setAttribute('data-theme', 'dark');
-				localStorage.setItem('theme', 'dark');
-				themeIcon.textContent = '☀️';
-			}
-		});
-
-		// Year Update
-		document.getElementById('year').textContent = new Date().getFullYear();
-
-		// Lazy Load Images
-		document.querySelectorAll('img').forEach(img => {
-			img.loading = 'lazy';
-			if (img.complete) {
-				img.classList.add('loaded');
-			} else {
-				img.addEventListener('load', () => img.classList.add('loaded'));
-			}
-		});
-
-			// Service Worker disabled - was causing image caching issues
-			// if ('serviceWorker' in navigator) {
-			//   window.addEventListener('load', () => {
-			//     navigator.serviceWorker.register('/assets/js/service-worker.js')
-			//       .then(registration => console.log('Service Worker registered:', registration.scope))
-			//       .catch(error => console.log('Service Worker registration failed:', error));
-			//   });
-			// }
-	</script>
-</body>
-
-</html>
+</section>

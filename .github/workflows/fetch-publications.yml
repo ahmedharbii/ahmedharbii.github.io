@@ -1,0 +1,61 @@
+name: Fetch Publications
+
+# Checks Google Scholar on a schedule and, when it finds publications that are
+# not yet in _data/publications.yml, opens a Pull Request adding them. The PR is
+# your validation step: review the entries, fix the author order / canonical URL,
+# add a thumbnail under assets/images/publications/, then merge.
+#
+# Note: Google Scholar frequently blocks scraping from GitHub's cloud IPs. For a
+# reliable run, add a SERPAPI_KEY repository secret (free tier ~100 searches/mo).
+# Without it the job may find nothing and simply no-op; run `make fetch` locally
+# in that case.
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'   # 06:00 UTC on the 1st of every month
+  workflow_dispatch:        # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: pip install -r scripts/requirements.txt
+
+    - name: Fetch new publications
+      env:
+        SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+      run: python scripts/fetch_publications.py --apply
+
+    - name: Open a pull request with any new publications
+      uses: peter-evans/create-pull-request@v6
+      with:
+        commit-message: "chore: add new publications from Google Scholar"
+        branch: bot/new-publications
+        delete-branch: true
+        title: "New publications from Google Scholar"
+        body: |
+          Automated check found publications on Google Scholar that were not yet
+          in `_data/publications.yml`.
+
+          **Before merging, please validate each new entry:**
+          - [ ] Correct author order and names
+          - [ ] Canonical publication URL (prefer the DOI/publisher link over the Scholar redirect)
+          - [ ] Correct year and venue
+          - [ ] Add a thumbnail under `assets/images/publications/` and update the `image:` path
+                (replace the `REPLACE_ME.webp` placeholder)
+
+          The build-and-test workflow on this PR will stay red until the
+          placeholder image is replaced with a real file.

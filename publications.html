@@ -1,289 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Publications | Ahmed Harbi Elsayed
+description: Publications by Ahmed Harbi Elsayed in the fields of Robotics, Computer Vision, and AI.
+keywords: Ahmed Harbi Elsayed, Ahmed Harbi, Publications, Research, Robotics, Computer Vision, AI
+og_title: Publications | Ahmed Harbi Elsayed
+og_description: Read the latest research publications by Ahmed Harbi Elsayed.
+---
+<!-- JSON-LD Structured Data (generated from _data/publications.yml) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Publications by Ahmed Harbi Elsayed",
+  "url": "{{ page.url | absolute_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "Ahmed Harbi Elsayed",
+    "url": "{{ '/' | absolute_url }}"
+  },
+  "itemListElement": [
+{%- for pub in site.data.publications %}
+    {
+      "@type": "ScholarlyArticle",
+      "position": {{ forloop.index }},
+      "name": {{ pub.title | jsonify }},
+      "author": {{ pub.authors | jsonify }},
+      "datePublished": "{{ pub.year }}",
+      "isPartOf": { "@type": "Periodical", "name": {{ pub.venue | jsonify }} },
+      "url": {{ pub.url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+  ]
+}
+</script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Publications | Ahmed Harbi Elsayed</title>
-  <script>
-    // Prevent theme flash by setting theme immediately
-    (function() {
-      const theme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="canonical" href="https://ahmedharbii.github.io/publications.html">
-  <link rel="icon" href="/assets/icons/logo.png">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#38bdf8">
-  <meta name="description"
-    content="Publications by Ahmed Harbi Elsayed in the fields of Robotics, Computer Vision, and AI.">
-  <meta name="keywords"
-    content="Ahmed Harbi Elsayed, Ahmed Harbi, Publications, Research, Robotics, Computer Vision, AI">
-  <meta name="author" content="Ahmed Harbi Elsayed">
+<section>
+  <h1 class="fade-in">Publications</h1>
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ahmedharbii.github.io/publications.html">
-  <meta property="og:title" content="Publications | Ahmed Harbi Elsayed">
-  <meta property="og:description" content="Read the latest research publications by Ahmed Harbi Elsayed.">
-  <meta property="og:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://ahmedharbii.github.io/publications.html">
-  <meta property="twitter:title" content="Publications | Ahmed Harbi Elsayed">
-  <meta property="twitter:description" content="Read the latest research publications by Ahmed Harbi Elsayed.">
-  <meta property="twitter:image" content="https://ahmedharbii.github.io/assets/images/home/profile_pic.jpeg">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Publications by Ahmed Harbi Elsayed",
-    "url": "https://ahmedharbii.github.io/publications.html",
-    "author": {
-      "@type": "Person",
-      "name": "Ahmed Harbi Elsayed",
-      "url": "https://ahmedharbii.github.io"
-    },
-    "itemListElement": [
-      {
-        "@type": "ScholarlyArticle",
-        "position": 1,
-        "name": "UJI-Butler: A Symbolic/Non-symbolic Robotic System that Learns Through Multi-modal Interaction",
-        "author": ["Abdelrhman Bassiouny", "Ahmed H Elsayed", "Zoe Falomir", "Angel P del Pobil"],
-        "datePublished": "2025",
-        "isPartOf": { "@type": "Periodical", "name": "International Journal of Social Robotics" },
-        "url": "https://link.springer.com/article/10.1007/s12369-025-01234-5"
-      },
-      {
-        "@type": "ScholarlyArticle",
-        "position": 2,
-        "name": "Interactive Simulator Framework for XAI Applications in Aquatic Environments",
-        "author": ["Ahmed H Elsayed", "Tarek A El-Mihoub", "Christoph Manss", "Andre Miedtank", "Lars Nolle", "Frederic Stahl"],
-        "datePublished": "2024",
-        "isPartOf": { "@type": "Periodical", "name": "Springer Nature Switzerland" },
-        "url": "https://link.springer.com/chapter/10.1007/978-3-031-77915-2_11"
-      },
-      {
-        "@type": "ScholarlyArticle",
-        "position": 3,
-        "name": "Human-Robot Collaboration System Setup for Weed Harvesting Scenarios in Aquatic Lakes",
-        "author": ["Ahmed H Elsayed", "Andrej Lejman", "Frederic Stahl"],
-        "datePublished": "2024",
-        "isPartOf": { "@type": "Periodical", "name": "arXiv" },
-        "url": "https://arxiv.org/abs/2410.17685"
-      },
-      {
-        "@type": "ScholarlyArticle",
-        "position": 4,
-        "name": "Design and control of soft biomimetic pangasius fish robot using fin ray effect and reinforcement learning",
-        "author": ["Samuel M Youssef", "MennaAllah Soliman", "Mahmood A Saleh", "Ahmed H Elsayed", "Ahmed G Radwan"],
-        "datePublished": "2022",
-        "isPartOf": { "@type": "Periodical", "name": "Scientific Reports" },
-        "url": "https://www.nature.com/articles/s41598-022-26179-x"
-      }
-    ]
-  }
-  </script>
-</head>
-
-<body>
-  <canvas id="particle-canvas"></canvas>
-
-  <nav>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <a href="/" class="name">Ahmed Harbi Elsayed</a>
-
-    <ul id="nav-menu">
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-    <div class="social-icons">
-      <a href="https://github.com/ahmedharbii" aria-label="GitHub">
-        <img src="/assets/icons/github-icon.png" alt="GitHub">
-      </a>
-      <a href="https://linkedin.com/in/ahmedharbii" aria-label="LinkedIn">
-        <img src="/assets/icons/linkedin-icon.png" alt="LinkedIn">
-      </a>
-      <a href="https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en" aria-label="Google Scholar">
-        <img src="/assets/icons/scholar-icon.png" alt="Scholar">
-      </a>
-      <a href="https://twitter.com/AhmedHarbii10" aria-label="Twitter">
-        <img src="/assets/icons/twitter-icon.png" alt="Twitter">
+{%- for pub in site.data.publications %}
+  <div class="publication-card fade-in"{% if pub.anchor %} id="{{ pub.anchor }}"{% endif %}>
+    <img class="publication-img" src="{{ pub.image }}" alt="{{ pub.title | escape }}">
+    <div class="publication-content">
+      <h3 class="publication-title">{{ pub.title }}</h3>
+      <div class="publication-meta">
+        {% assign n = pub.authors | size -%}
+        {%- assign second_last = n | minus: 1 -%}
+        {%- for a in pub.authors -%}
+          {%- if a contains site.me_name %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif -%}
+          {%- unless forloop.last -%}
+            {%- if forloop.index == second_last %}{% if n > 2 %},{% endif %} and {% else %}, {% endif -%}
+          {%- endunless -%}
+        {%- endfor %} ({{ pub.year }})<br>
+        <em>{{ pub.venue_display | default: pub.venue }}</em>
+      </div>
+      <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer" class="publication-link">
+        View Publication →
       </a>
     </div>
-
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      <span id="theme-icon">🌙</span>
-    </button>
-  </nav>
-
-  <main>
-    <section>
-      <h1 class="fade-in">Publications</h1>
-
-      <div class="publication-card fade-in">
-        <img class="publication-img" src="/assets/images/publications/uji_butler.png" alt="UJI-Butler">
-        <div class="publication-content">
-          <h3 class="publication-title">UJI-Butler: A Symbolic/Non-symbolic Robotic System that Learns Through
-            Multi-modal Interaction</h3>
-          <div class="publication-meta">
-            Abdelrhman Bassiouny, <strong>Ahmed H Elsayed</strong>, Zoe Falomir, and Angel P del Pobil (2025)<br>
-            <em>International Journal of Social Robotics</em>
-          </div>
-          <a href="https://link.springer.com/article/10.1007/s12369-025-01234-5" target="_blank"
-            rel="noopener noreferrer" class="publication-link">
-            View Publication →
-          </a>
-        </div>
-      </div>
-
-      <div class="publication-card fade-in" id="interactive-sim-framework">
-        <img class="publication-img" src="/assets/images/publications/Interactive_Simulator_Framework.png"
-          alt="Interactive Simulator Framework">
-        <div class="publication-content">
-          <h3 class="publication-title">Interactive Simulator Framework for XAI Applications in Aquatic Environments
-          </h3>
-          <div class="publication-meta">
-            <strong>Ahmed H Elsayed</strong>, Tarek A El-Mihoub, Christoph Manss, Andre Miedtank, Lars Nolle, and
-            Frederic Stahl (2024)<br>
-            <em>Springer Nature Switzerland</em>
-          </div>
-          <a href="https://link.springer.com/chapter/10.1007/978-3-031-77915-2_11" target="_blank"
-            rel="noopener noreferrer" class="publication-link">
-            View Publication →
-          </a>
-        </div>
-      </div>
-
-      <div class="publication-card fade-in">
-        <img class="publication-img" src="/assets/images/publications/Human-Robot_Collaboration.jpg"
-          alt="Human-Robot Collaboration">
-        <div class="publication-content">
-          <h3 class="publication-title">Human-Robot Collaboration System Setup for Weed Harvesting Scenarios in Aquatic
-            Lakes</h3>
-          <div class="publication-meta">
-            <strong>Ahmed H Elsayed</strong>, Andrej Lejman, and Frederic Stahl (2024)<br>
-            <em>arXiv preprint arXiv:2410.17685</em>
-          </div>
-          <a href="https://arxiv.org/abs/2410.17685" target="_blank" rel="noopener noreferrer" class="publication-link">
-            View Publication →
-          </a>
-        </div>
-      </div>
-
-      <div class="publication-card fade-in">
-        <img class="publication-img" src="/assets/images/publications/pangasius_paper.png" alt="Pangasius Fish Robot">
-        <div class="publication-content">
-          <h3 class="publication-title">Design and control of soft biomimetic pangasius fish robot using fin ray effect
-            and reinforcement learning</h3>
-          <div class="publication-meta">
-            Samuel M Youssef, MennaAllah Soliman, Mahmood A Saleh, <strong>Ahmed H Elsayed</strong>, and Ahmed G Radwan
-            (2022)<br>
-            <em>Scientific Reports</em>
-          </div>
-          <a href="https://www.nature.com/articles/s41598-022-26179-x" target="_blank" rel="noopener noreferrer"
-            class="publication-link">
-            View Publication →
-          </a>
-        </div>
-      </div>
-
-    </section>
-  </main>
-
-  <footer>
-    <p>Copyright &copy; <span id="year"></span> Ahmed Harbi Elsayed</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script src="/assets/js/particles.js"></script>
-  <script>
-    // Hamburger Menu Toggle
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking on a link
-    document.querySelectorAll('#nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      }
-    });
-
-    // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-
-    if (currentTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      themeIcon.textContent = '☀️';
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-    }
-
-    themeToggle.addEventListener('click', () => {
-      const theme = document.documentElement.getAttribute('data-theme');
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        themeIcon.textContent = '🌙';
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        themeIcon.textContent = '☀️';
-      }
-    });
-
-    // Year Update
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Lazy Load Images
-    document.querySelectorAll('img').forEach(img => {
-      img.loading = 'lazy';
-      if (img.complete) {
-        img.classList.add('loaded');
-      } else {
-        img.addEventListener('load', () => img.classList.add('loaded'));
-      }
-    });
-
-    // Service Worker disabled - was causing image caching issues
-    // if ('serviceWorker' in navigator) {
-    //   window.addEventListener('load', () => {
-    //     navigator.serviceWorker.register('/assets/js/service-worker.js')
-    //       .then(registration => console.log('Service Worker registered:', registration.scope))
-    //       .catch(error => console.log('Service Worker registration failed:', error));
-    //   });
-    // }
-  </script>
-</body>
-
-</html>
+  </div>
+{%- endfor %}
+</section>

@@ -1,0 +1,119 @@
+  <canvas id="shark-canvas"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+  <p class="shark-attribution">
+    <a href="https://skfb.ly/6VoZC" target="_blank" rel="noopener noreferrer">"Great Hammerhead Shark"</a> by
+    DigitalLife3D
+  </p>
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+    const sharkCanvas = document.getElementById('shark-canvas');
+    if (sharkCanvas) {
+      const sharkScene = new THREE.Scene();
+
+      const sharkCamera = new THREE.PerspectiveCamera(45, sharkCanvas.clientWidth / sharkCanvas.clientHeight, 0.1, 1000);
+      sharkCamera.position.set(7, 7, 7);
+      sharkCamera.lookAt(0, 0, 0);
+
+      const sharkRenderer = new THREE.WebGLRenderer({
+        canvas: sharkCanvas,
+        antialias: true,
+        alpha: true
+      });
+      sharkRenderer.setSize(sharkCanvas.clientWidth, sharkCanvas.clientHeight);
+      sharkRenderer.setPixelRatio(window.devicePixelRatio);
+      sharkRenderer.setClearColor(0x000000, 0);
+
+      const sharkAmbientLight = new THREE.AmbientLight(0xffffff, 1.0);
+      sharkScene.add(sharkAmbientLight);
+
+      const sharkDirectionalLight1 = new THREE.DirectionalLight(0xffffff, 1.0);
+      sharkDirectionalLight1.position.set(5, 5, 5);
+      sharkScene.add(sharkDirectionalLight1);
+
+      const sharkDirectionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+      sharkDirectionalLight2.position.set(-5, 5, -5);
+      sharkScene.add(sharkDirectionalLight2);
+
+      const sharkControls = new OrbitControls(sharkCamera, sharkRenderer.domElement);
+      sharkControls.enableDamping = true;
+      sharkControls.dampingFactor = 0.05;
+      sharkControls.autoRotate = true;
+      sharkControls.autoRotateSpeed = 2;
+
+      const sharkLoader = new GLTFLoader();
+      sharkLoader.load(
+        '/docs/models/hammerhead_shark.glb',
+        function (gltf) {
+          const model = gltf.scene;
+          const box = new THREE.Box3().setFromObject(model);
+          const center = box.getCenter(new THREE.Vector3());
+          const size = box.getSize(new THREE.Vector3());
+
+          model.traverse((child) => {
+            if (child.isMesh) {
+              child.position.x -= center.x;
+              child.position.y -= center.y;
+              child.position.z -= center.z;
+            }
+          });
+
+          model.position.set(0, 0, 0);
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const scale = 6 / maxDim;
+          model.scale.setScalar(scale);
+
+          sharkScene.add(model);
+
+          const clock = new THREE.Clock();
+          const currentDirection = new THREE.Vector3(0, 0, 1);
+          let mixer = null;
+          if (gltf.animations && gltf.animations.length > 0) {
+            mixer = new THREE.AnimationMixer(model);
+            gltf.animations.forEach((clip) => {
+              mixer.clipAction(clip).play();
+            });
+          }
+
+          function animate() {
+            requestAnimationFrame(animate);
+            if (mixer) mixer.update(clock.getDelta());
+
+            // Swimming path
+            const time = Date.now() * 0.00015;
+            const newX = Math.sin(time * 3) * 10;
+            const newY = Math.cos(time * 2) * 3;
+            const newZ = Math.sin(time * 1) * 4 - 10;
+
+            const nextTime = time + 0.01;
+            const nextX = Math.sin(nextTime * 3) * 10;
+            const nextY = Math.cos(nextTime * 2) * 3;
+            const nextZ = Math.sin(nextTime * 1) * 4 - 10;
+
+            const targetDirection = new THREE.Vector3(nextX - newX, nextY - newY, nextZ - newZ).normalize();
+            currentDirection.lerp(targetDirection, 0.05);
+
+            model.position.set(newX, newY, newZ);
+            const lookTarget = new THREE.Vector3().addVectors(model.position, currentDirection);
+            model.lookAt(lookTarget);
+
+            sharkControls.update();
+            sharkRenderer.render(sharkScene, sharkCamera);
+          }
+          animate();
+        },
+        undefined,
+        function (error) {
+          console.error('Error loading shark model:', error);
+        }
+      );
+
+      window.addEventListener('resize', () => {
+        sharkCamera.aspect = window.innerWidth / window.innerHeight;
+        sharkCamera.updateProjectionMatrix();
+        sharkRenderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    }
+  </script>

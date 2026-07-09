@@ -1,0 +1,52 @@
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <script>
+    // Prevent theme flash by setting theme immediately
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" href="/assets/icons/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#38bdf8">
+  {%- if page.apple_meta %}
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Ahmed Harbi">
+  {%- endif %}
+  <meta name="description" content="{{ page.description }}">
+  {%- if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords }}">
+  {%- endif %}
+  <meta name="author" content="{{ site.author }}">
+
+  {%- assign og_image = page.image | default: site.default_image | absolute_url %}
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ page.og_title | default: page.title }}">
+  <meta property="og:description" content="{{ page.og_description | default: page.description }}">
+  <meta property="og:image" content="{{ og_image }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ page.url | absolute_url }}">
+  <meta property="twitter:title" content="{{ page.twitter_title | default: page.og_title | default: page.title }}">
+  <meta property="twitter:description" content="{{ page.twitter_description | default: page.og_description | default: page.description }}">
+  <meta property="twitter:image" content="{{ og_image }}">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {%- if page.three %}
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@{{ site.three_version }}/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@{{ site.three_version }}/examples/jsm/"
+      }
+    }
+  </script>
+  {%- endif %}

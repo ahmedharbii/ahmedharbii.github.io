@@ -8,82 +8,91 @@ Visit: [ahmedharbii.github.io](https://ahmedharbii.github.io)
 
 ## 📁 Repository Structure
 
+The site is a [Jekyll](https://jekyllrb.com) site built automatically by GitHub Pages.
+Shared markup (head, nav, footer, scripts, 3D models) lives in layouts/includes so
+each page only contains its own content.
+
 ```
 .
-├── index.html              # Homepage
+├── _config.yml             # Site configuration (author, social links, scholar id)
+├── _layouts/
+│   └── default.html        # Shared page shell
+├── _includes/              # head, nav, footer, scripts, 3D creature modules
+├── _data/
+│   └── publications.yml    # Source of truth for the Publications page
+├── index.html              # Homepage (content + front matter)
 ├── projects.html           # Projects showcase
-├── publications.html       # Research publications
-├── contact.html           # Contact information
-├── styles.css             # Main stylesheet
-├── particles.js           # Particle animation background
-├── images/                # Image assets
-│   ├── home/             # Homepage images
-│   ├── projects/         # Project screenshots
-│   └── publications/     # Publication thumbnails
-├── media/                # Media files
-│   └── press/           # Press articles and PDFs
-├── tests/                # Automated test suite
-└── .github/workflows/    # CI/CD workflows
+├── publications.html       # Renders cards + JSON-LD from _data/publications.yml
+├── contact.html            # Contact information
+├── about.html              # About page
+├── privacy.html            # Privacy policy
+├── assets/
+│   ├── css/styles.css      # Main stylesheet
+│   ├── js/                 # particles.js (background) + site.js (shared behaviour)
+│   ├── icons/              # Logos and social icons
+│   ├── images/             # home / projects / publications image assets
+│   └── media/press/        # Press articles and PDFs
+├── scripts/                # Google Scholar fetch pipeline
+├── tests/                  # Python test suite (runs against the built _site/)
+└── .github/workflows/      # CI: build + test, and monthly publication fetch
 ```
 
 ## 🚀 Features
 
 - Modern, responsive design with glassmorphism effects
 - Dark/Light theme toggle
-- 3D animated shark using Three.js
-- Particle.js background effects
-- SEO optimized with Open Graph tags
+- 3D animated shark / killer whale using Three.js
+- Particle background effects (Three.js)
+- SEO optimized with Open Graph tags and JSON-LD structured data
 - Mobile-friendly navigation
-
-## 🧪 Testing
-
-Run automated tests to verify website integrity:
-
-```bash
-python tests/test_website.py
-```
-
-Tests cover:
-- HTML structure validation
-- Meta tags and SEO
-- Image and asset verification
-- Internal link checking
-- Responsive design validation
-
-See [tests/README.md](tests/README.md) for more details.
 
 ## 🛠️ Local Development
 
-1. Clone the repository:
+Requires Ruby (for Jekyll) and Python (for the fetch script).
+
 ```bash
 git clone https://github.com/ahmedharbii/ahmedharbii.github.io.git
 cd ahmedharbii.github.io
+make install        # bundle install + pip install -r scripts/requirements.txt
+make serve          # http://localhost:4000 with live reload
 ```
 
-2. Serve locally (Python):
+Other targets: `make build`, `make test`, `make clean` (see `make help`).
+
+## 🧪 Testing
+
 ```bash
-python -m http.server 8000
+make test           # builds the site, then runs the suite against _site/
 ```
 
-3. Open in browser:
-```
-http://localhost:8000
-```
+Tests cover HTML structure, meta tags/SEO, image and asset verification,
+internal link checking, and responsive design. See [tests/README.md](tests/README.md).
 
 ## 📝 Content Management
 
 ### Update Publications
 
-Publications are managed in `_data/publications.yml`. To fetch from Google Scholar:
+Publications are rendered from `_data/publications.yml` (cards **and** JSON-LD).
+To pull new ones from Google Scholar:
 
 ```bash
-pip install -r requirements.txt
-python fetch_publications.py
+pip install -r scripts/requirements.txt
+make fetch          # writes NEW publications to _data/publications.draft.yml
 ```
+
+Then **validate** each draft entry (author order, canonical DOI/URL, year, venue),
+add a thumbnail under `assets/images/publications/`, move the entry into
+`_data/publications.yml`, and delete the draft.
+
+Google Scholar has no official API and blocks scraping from cloud IPs, so `make fetch`
+is most reliable run locally. A monthly GitHub Action
+([fetch-publications.yml](.github/workflows/fetch-publications.yml)) attempts the same
+check and opens a Pull Request with any new entries; add a `SERPAPI_KEY` repository
+secret to make that CI run reliable.
 
 ### Add New Projects
 
-Edit `projects.html` and add project cards with images/videos in the `images/projects/` folder.
+Edit `projects.html` and add project cards with images/videos under `assets/images/projects/`.
 
 ## 📄 License
 

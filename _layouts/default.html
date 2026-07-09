@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{%- include head.html %}
+</head>
+
+<body>
+  {%- if page.page_loader %}
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+  {%- endif %}
+
+  <canvas id="particle-canvas"></canvas>
+
+{%- include nav.html %}
+
+  <main>
+{{ content }}
+  </main>
+
+{%- include footer.html %}
+
+{%- include scripts.html %}
+</body>
+
+</html>

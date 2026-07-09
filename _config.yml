@@ -1,0 +1,38 @@
+# Site configuration for GitHub Pages (Jekyll)
+title: Ahmed Harbi Elsayed
+url: https://ahmedharbii.github.io
+author: Ahmed Harbi Elsayed
+description: >-
+  Portfolio of Ahmed Harbi Elsayed, a Robotics Researcher specializing in
+  Marine and Maritime Intelligent Robotics, Computer Vision, and Deep Learning.
+
+# Google Scholar profile used by the publication fetch pipeline (scripts/fetch_publications.py)
+scholar_id: JZ3FAx8AAAAJ
+
+# Author name highlighted (bolded) in publication author lists
+me_name: Elsayed
+
+# Social links rendered in the navigation bar (see _includes/nav.html)
+social:
+  github: https://github.com/ahmedharbii
+  linkedin: https://linkedin.com/in/ahmedharbii
+  scholar: https://scholar.google.com/citations?user=JZ3FAx8AAAAJ&hl=en
+  twitter: https://twitter.com/AhmedHarbii10
+
+# Default Open Graph image
+default_image: /assets/images/home/profile_pic.jpeg
+
+# Pin the version of three.js loaded from the CDN in one place
+three_version: "0.160.0"
+
+# Files Jekyll should not copy into the built site
+exclude:
+  - scripts/
+  - tests/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+  - Makefile
+  - "*.py"
+  - "requirements.txt"

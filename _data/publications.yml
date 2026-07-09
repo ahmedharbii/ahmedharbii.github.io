@@ -1,0 +1,62 @@
+# Source of truth for the Publications page (publications.html renders from this)
+# and the JSON-LD structured data. New entries are appended by the Scholar fetch
+# pipeline into publications.draft.yml for you to validate before moving them here.
+#
+# Fields:
+#   title         Publication title
+#   authors       Ordered list of author names (the author matching site config is bolded)
+#   year          Publication year
+#   venue         Journal/publisher name (used in JSON-LD "isPartOf")
+#   venue_display Optional override for the line shown on the card (defaults to venue)
+#   url           Link to the publication
+#   image         Thumbnail under /assets/images/publications/
+#   anchor        Optional id= for deep links (e.g. projects.html#interactive-sim-framework)
+#   scholar_id    Optional Google Scholar cluster id, used by the fetch script to dedupe
+
+- title: "UJI-Butler: A Symbolic/Non-symbolic Robotic System that Learns Through Multi-modal Interaction"
+  authors:
+    - Abdelrhman Bassiouny
+    - Ahmed H Elsayed
+    - Zoe Falomir
+    - Angel P del Pobil
+  year: 2025
+  venue: International Journal of Social Robotics
+  url: https://link.springer.com/article/10.1007/s12369-025-01234-5
+  image: /assets/images/publications/uji_butler.webp
+
+- title: "Interactive Simulator Framework for XAI Applications in Aquatic Environments"
+  authors:
+    - Ahmed H Elsayed
+    - Tarek A El-Mihoub
+    - Christoph Manss
+    - Andre Miedtank
+    - Lars Nolle
+    - Frederic Stahl
+  year: 2024
+  venue: Springer Nature Switzerland
+  url: https://link.springer.com/chapter/10.1007/978-3-031-77915-2_11
+  image: /assets/images/publications/Interactive_Simulator_Framework.webp
+  anchor: interactive-sim-framework
+
+- title: "Human-Robot Collaboration System Setup for Weed Harvesting Scenarios in Aquatic Lakes"
+  authors:
+    - Ahmed H Elsayed
+    - Andrej Lejman
+    - Frederic Stahl
+  year: 2024
+  venue: arXiv
+  venue_display: "arXiv preprint arXiv:2410.17685"
+  url: https://arxiv.org/abs/2410.17685
+  image: /assets/images/publications/Human-Robot_Collaboration.webp
+
+- title: "Design and control of soft biomimetic pangasius fish robot using fin ray effect and reinforcement learning"
+  authors:
+    - Samuel M Youssef
+    - MennaAllah Soliman
+    - Mahmood A Saleh
+    - Ahmed H Elsayed
+    - Ahmed G Radwan
+  year: 2022
+  venue: Scientific Reports
+  url: https://www.nature.com/articles/s41598-022-26179-x
+  image: /assets/images/publications/pangasius_paper.webp

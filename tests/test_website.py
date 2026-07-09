@@ -34,7 +34,19 @@ class LinkAndImageParser(HTMLParser):
 
 
 def get_project_root():
-    """Get the project root directory."""
+    """Directory the tests run against.
+
+    The site is built with Jekyll, so the assembled HTML (with the shared
+    layout, nav, head and footer) only exists in the build output. Set
+    SITE_DIR=_site in CI to test the built site; otherwise fall back to the
+    repo root (and to _site automatically if it has been built locally).
+    """
+    site_dir = os.environ.get('SITE_DIR')
+    if site_dir:
+        return Path(site_dir)
+    built = Path(__file__).parent.parent / '_site'
+    if built.exists():
+        return built
     return Path(__file__).parent.parent
 
 

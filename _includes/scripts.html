@@ -1,0 +1,9 @@
+  <!-- three.js powers the particle background (assets/js/particles.js) on every page -->
+  <script src="https://cdn.jsdelivr.net/npm/three@{{ site.three_version }}/build/three.min.js"></script>
+  <script src="/assets/js/particles.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
+  {%- if page.creature == 'shark' %}
+  {% include creature-shark.html %}
+  {%- elsif page.creature == 'whale' %}
+  {% include creature-whale.html %}
+  {%- endif %}
