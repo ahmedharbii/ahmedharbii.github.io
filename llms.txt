@@ -1,0 +1,50 @@
+---
+layout: null
+permalink: /llms.txt
+sitemap: false
+---
+# Ahmed Harbi Elsayed
+
+> Robotics Researcher at DFKI (German Research Center for Artificial Intelligence) and PhD candidate at Osnabrück University, working on Explainable AI for marine and underwater robotic systems. Holds an MSc. in Marine and Maritime Intelligent Robotics from Toulon University (France) and Jaume I University (Spain).
+
+Research areas: marine and underwater robotics (AUVs, ROVs, autonomous surface vehicles), computer vision and SLAM (visual odometry, underwater multi-camera deep SLAM), Explainable AI (XAI) for aquatic environments, human-robot collaboration, and Unity-based robotics simulation. Works primarily in Python, C++, and MATLAB with ROS1/ROS2, Unity, Docker, SolidWorks, and Ansys CFD.
+
+Name variants used in publications and across the web: Ahmed Harbi Elsayed, Ahmed H Elsayed, Ahmed Harbi, Ahmed Elsayed.
+
+- Contact: ahmedharbii10@gmail.com
+- Site: {{ '/' | absolute_url }}
+- Full site content as a single document: {{ '/llms-full.txt' | absolute_url }}
+
+## Pages
+
+- [Home]({{ '/' | absolute_url }}): Overview with work experience, education, skills, academic service, volunteering, and press coverage.
+- [About]({{ '/about.html' | absolute_url }}): Biography, research interests, and academic background.
+- [Publications]({{ '/publications.html' | absolute_url }}): Peer-reviewed papers and preprints in robotics, computer vision, and AI.
+- [Projects]({{ '/projects.html' | absolute_url }}): Robotics and AI projects, including underwater simulators, SLAM, and competition entries.
+- [Contact]({{ '/contact.html' | absolute_url }}): Email and LinkedIn for research collaboration and inquiries.
+
+## Publications
+{% for pub in site.data.publications %}
+- [{{ pub.title }}]({{ pub.url }}): {{ pub.authors | join: ", " }} ({{ pub.year }}). {{ pub.venue_display | default: pub.venue }}.
+{%- endfor %}
+
+## Selected projects
+
+- [UnityUWSIM - Underwater Simulator](https://github.com/ahmedharbii/UnityUWSIM): Unity underwater simulator based on the CIRTESU Lab environment, featuring BlueROV2, docking stations, obstacles, and marine life. Used as the competition platform for the 2nd MIR Annual Symposium Robotics Challenge at UJI, Spain (2023).
+- [Interactive Simulator Framework for XAI]({{ '/projects.html' | absolute_url }}): Interactive simulator framework for Explainable AI applications in aquatic environments, developed at DFKI.
+- [UJI Butler]({{ '/projects.html' | absolute_url }}): Sign language recognition with YOLOv7 driving a UR5 robot arm and a Kobuki mobile robot in a coffee-serving task.
+- [Deep Visual Odometry (DVO)]({{ '/projects.html' | absolute_url }}): Synthetic dataset collection pipeline in Unity plus deep visual odometry on BlueROV2 for underwater navigation (MSc project, 2023).
+- [Autonomous Surface Vehicle (ASV)]({{ '/projects.html' | absolute_url }}): Autonomous DDBoat for open-water trajectory following. 1st place at the MIR Championship, Lac de Guerlédan, France (2022).
+
+## Profiles
+
+- [Google Scholar]({{ site.social.scholar }}): Citation record and full publication list.
+- [GitHub]({{ site.social.github }}): Open-source robotics and computer vision code.
+- [LinkedIn]({{ site.social.linkedin }}): Professional background and updates.
+- [X / Twitter]({{ site.social.twitter }}): Occasional research updates.
+
+## Optional
+
+- [Interview: "This master's degree addresses pioneering techniques in underwater robotics"](https://www.master-mir.eu/interview-of-ahmed-elsayed-mir-student/): Interview in Periódico Mediterráneo (31 January 2023) on underwater robotics and the EMJMD Marine and Maritime Intelligent Robotics program.
+- [Press PDF (Spanish)]({{ '/assets/media/press/31-1-2023-PeriodicoMediterraneoCastellon.pdf' | absolute_url }}): Scan of the printed Periódico Mediterráneo interview.
+- [Privacy policy]({{ '/privacy.html' | absolute_url }}): How this site handles visitor information.

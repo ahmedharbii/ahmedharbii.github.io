@@ -247,6 +247,88 @@ def test_media_folder_structure():
     print()
 
 
+def read_text_file(filename):
+    """Read a plain-text file from the built site, or None if absent."""
+    filepath = get_project_root() / filename
+    if not filepath.exists():
+        return None
+    with open(filepath, 'r', encoding='utf-8') as f:
+        return f.read()
+
+
+def count_source_publications():
+    """Number of entries in _data/publications.yml.
+
+    Read with a regex rather than PyYAML so the suite keeps running on a bare
+    Python install (CI does not install the fetch script's dependencies).
+    """
+    data_file = Path(__file__).parent.parent / '_data' / 'publications.yml'
+    if not data_file.exists():
+        return None
+    with open(data_file, 'r', encoding='utf-8') as f:
+        return len(re.findall(r'^- title:', f.read(), re.MULTILINE))
+
+
+def test_llms_txt():
+    """Test the llms.txt files that expose site content to AI crawlers.
+
+    Both files are Jekyll-rendered, so they only exist in the build output and
+    unrendered Liquid in them is a real bug. Structure follows llmstxt.org: a
+    single H1, a blockquote summary, then H2 sections of markdown links.
+    """
+    print("Testing llms.txt...")
+    files = ['llms.txt', 'llms-full.txt']
+
+    for filename in files:
+        content = read_text_file(filename)
+        assert content is not None, f"Missing required file: {filename}"
+
+        # Front matter must have been consumed by Jekyll, and every Liquid tag
+        # rendered — a raw {{ }} here would be served verbatim to crawlers.
+        assert not content.lstrip().startswith('---'), \
+            f"{filename}: front matter was not processed by Jekyll"
+        assert '{{' not in content and '{%' not in content, \
+            f"{filename}: contains unrendered Liquid"
+
+        lines = [line for line in content.splitlines() if line.strip()]
+        assert lines[0].startswith('# '), f"{filename}: must open with an H1 title"
+        h1_count = sum(1 for line in lines if line.startswith('# '))
+        assert h1_count == 1, f"{filename}: expected exactly one H1, found {h1_count}"
+        assert lines[1].startswith('> '), \
+            f"{filename}: H1 must be followed by a blockquote summary"
+        assert any(line.startswith('## ') for line in lines), \
+            f"{filename}: must contain at least one H2 section"
+
+        # Links must be absolute: a crawler reads these files standalone, with
+        # no page context to resolve a relative path against.
+        for url in re.findall(r'\]\((.*?)\)', content):
+            assert url.startswith('http://') or url.startswith('https://'), \
+                f"{filename}: non-absolute link {url!r}"
+
+        print(f"  ✓ {filename} is present and well-formed")
+
+    # Publications are templated from _data/publications.yml; if that count and
+    # the rendered count diverge, the template stopped tracking the data.
+    expected = count_source_publications()
+    if expected:
+        index = read_text_file('llms.txt')
+        full = read_text_file('llms-full.txt')
+        index_pubs = index.split('## Publications')[1].split('\n## ')[0]
+        assert index_pubs.count('\n- [') == expected, \
+            f"llms.txt: expected {expected} publications, found {index_pubs.count(chr(10) + '- [')}"
+        full_pubs = full.split('## Publications')[1].split('\n## ')[0]
+        assert full_pubs.count('\n### ') == expected, \
+            f"llms-full.txt: expected {expected} publications, found {full_pubs.count(chr(10) + '### ')}"
+        print(f"  ✓ Both files list all {expected} publications from _data/publications.yml")
+
+    # robots.txt should point crawlers at llms.txt.
+    robots = read_text_file('robots.txt')
+    assert robots is not None, "Missing robots.txt"
+    assert 'llms.txt' in robots, "robots.txt: does not reference llms.txt"
+    print("  ✓ robots.txt references llms.txt")
+    print()
+
+
 def test_responsive_viewport():
     """Test that pages have responsive viewport meta tag."""
     print("Testing responsive design...")
@@ -278,6 +360,7 @@ def run_all_tests():
         test_navigation_consistency()
         test_no_broken_internal_links()
         test_media_folder_structure()
+        test_llms_txt()
         test_responsive_viewport()
         
         print("=" * 60)

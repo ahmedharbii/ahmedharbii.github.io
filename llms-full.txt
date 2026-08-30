@@ -1,0 +1,157 @@
+---
+layout: null
+permalink: /llms-full.txt
+sitemap: false
+---
+# Ahmed Harbi Elsayed
+
+> Robotics Researcher at DFKI (German Research Center for Artificial Intelligence) and PhD candidate at Osnabrück University, working on Explainable AI for marine and underwater robotic systems.
+
+Source: {{ '/' | absolute_url }}
+Contact: ahmedharbii10@gmail.com
+Name variants: Ahmed Harbi Elsayed, Ahmed H Elsayed, Ahmed Harbi, Ahmed Elsayed.
+
+## Biography
+
+Ahmed Harbi Elsayed is a Robotics Researcher at DFKI (German Research Center for Artificial
+Intelligence), where he works on Explainable AI applied to marine and underwater robotic
+systems. His research bridges computer vision, deep learning, and autonomous underwater
+vehicles to make robotic decision-making more transparent and interpretable.
+
+He holds an MSc. in Marine and Maritime Intelligent Robotics from a dual-degree program at
+Toulon University (France) and Jaume I University (Spain), where his thesis focused on
+Underwater Multi-Cam Deep SLAM. Prior to that, he earned a BSc. in Electromechanical
+Engineering from Alexandria University, Egypt, graduating with an award-winning project that
+placed 1st in the Technical Design Report at the SAE Aero Design 2018 competition.
+
+Beyond research, he has contributed to underwater simulators, autonomous surface vehicles, and
+human-robot collaboration systems, with work published in journals including Scientific Reports
+and the International Journal of Social Robotics.
+
+## Research interests
+
+- Marine and underwater robotics: AUVs, ROVs, autonomous surface vehicles.
+- Computer vision and SLAM: visual odometry, underwater multi-camera deep SLAM.
+- Explainable AI (XAI): interpretable models for aquatic environments.
+- Human-robot collaboration: gesture-based interaction, sign language recognition.
+- Simulation: Unity-based underwater and robotics simulators.
+
+## Work experience
+
+- Researcher, DFKI, Germany (present). Explainable AI in marine environments.
+- Computer Vision Intern, Hydromea SA, Switzerland. Computer vision algorithms for underwater applications.
+- VSLAM Intern, COSMER Lab, France. Visual SLAM techniques for maritime environments.
+- Research Assistant, Nile University, Egypt. Underwater soft robotics.
+- Innovation Engineer, Nile University, Egypt. Responsible for the Innovation Hub Lab and supervising students.
+- Robotics Instructor, Innova STEM Education, Alexandria, Egypt. Robotics courses for students ages 6-17.
+- ROV Instructor, Innova STEM Education, Alexandria, Egypt. Remotely operated vehicle design and operation.
+
+## Education
+
+- PhD Candidate in Computer Science, Osnabrück University, Germany (2025 - present).
+- MSc. in Marine and Maritime Intelligent Robotics, Toulon University (France) and Jaume I University (Spain), 2021 - 2023. Thesis: Underwater Multi-Cam Deep SLAM.
+- BSc. in Electromechanical Engineering, Alexandria University, Egypt, 2013 - 2018. Graduation project: RC Aircraft Design and Control, grade Excellent. Awarded Best Mechanical Engineering Graduation Project of the Year (2018) in Egypt, and 1st place in the Technical Design Report at the SAE Aero Design 2018 Competition (Advanced Class) in Van Nuys, California, USA, among 37 universities. Led tail design and conducted the complete CFD analysis on the aircraft.
+
+## Skills
+
+- Core: computer vision, deep learning, SLAM, ROS1/ROS2.
+- Languages: Python, C++, MATLAB.
+- Tools: Unity, Docker, Git, SolidWorks, Ansys CFD.
+
+## Publications
+{% for pub in site.data.publications %}
+### {{ pub.title }}
+
+- Authors: {{ pub.authors | join: ", " }}
+- Year: {{ pub.year }}
+- Venue: {{ pub.venue_display | default: pub.venue }}
+- URL: {{ pub.url }}
+{% endfor %}
+Full citation record: {{ site.social.scholar }}
+
+## Projects
+
+### Interactive Simulator Framework for XAI
+
+Interactive simulator framework for Explainable AI applications in aquatic environments.
+Related publication: "Interactive Simulator Framework for XAI Applications in Aquatic
+Environments" (2024). Video: https://www.youtube.com/watch?v=jrJs4kzOeGI
+
+### UJI Butler
+
+Sign language recognition using YOLOv7 to detect hand gestures and issue commands to a UR5
+robot arm that serves coffee. The UR5 then hands the coffee to a Kobuki mobile robot, which
+delivers it to the customer. Video: https://www.youtube.com/watch?v=iXYfxaN-TXU
+
+### UnityUWSIM - Underwater Simulator (2023)
+
+A comprehensive underwater simulator built in Unity that served as the competition platform
+for the 2nd MIR Annual Symposium Robotics Challenge at UJI, Spain. The simulator features a
+realistic underwater environment based on the CIRTESU Lab, with BlueROV2, docking stations,
+obstacles, and marine life, for testing autonomous navigation and visual servoing algorithms.
+Code: https://github.com/ahmedharbii/UnityUWSIM
+Video: https://www.youtube.com/watch?v=v4bm29MwCQ8
+
+### Deep Visual Odometry (DVO) (MSc project, 2023)
+
+Synthetic dataset collection pipeline built in Unity, with deep visual odometry implemented on
+BlueROV2 using Unity Robotics integration for underwater navigation.
+
+### Autonomous Surface Vehicle (ASV) (MSc project, 2022)
+
+Design and programming of an autonomous DDBoat for trajectory following in open water.
+Achievement: 1st place at the MIR Championship, Lac de Guerlédan, France (2022).
+
+### RC Aircraft - Graduation Project (2018)
+
+Design and manufacture of a remotely controlled aircraft as a BSc graduation project. Led tail
+design and conducted the complete CFD analysis in Ansys for aerodynamic optimization.
+Achievements: Best Engineering Graduation Project of the Year (2018) in Egypt; 1st place in
+the Technical Design Report at the SAE Aero Design 2018 Competition (Advanced Class), competing
+in Van Nuys, California, USA among 37 international universities.
+Video: https://www.youtube.com/watch?v=OFFzbm5mgCk
+
+### Earlier projects
+
+- RaptorII ROV (2017): Designed and manufactured a remotely operated vehicle for the MATE Regional Competition, building the mechanical structure and integrating control systems for underwater operations.
+- Mass Airflow Sensor (MAF) (2017): Designed and programmed a mass airflow sensor for a data acquisition project, with sensor calibration and real-time data logging.
+- Quadcopter (2017): Designed and manufactured a quadcopter drone in the AAST workshop, building the frame, integrating the flight controller, and tuning PID parameters for stable flight.
+- Raptor I ROV (2016): Designed and manufactured a first-generation ROV for the MATE Regional Competition.
+- PV Solar Panel (2016): Manufactured and welded a 250-watt photovoltaic solar panel at Tiba Solar Factory.
+
+## Academic service
+
+Conference reviewer (2024 - present) for:
+
+- SGAI International Conference on Artificial Intelligence: 2024, 2025, 2026.
+- European Conference on Modelling and Simulation (ECMS): 2025, 2026.
+
+## Volunteering
+
+- Team Member, AIESEC Alexandria, Egypt (November 2015 - February 2017). Contributed to international exchange and leadership development programs.
+- Campus Director (Exchange Participant), AIESEC in Greece, Athens (May 2016 - July 2016). Led campus operations and facilitated cultural exchange programs.
+- English Teacher (Exchange Participant), AIESEC in Mainland China, Guangzhou (June 2015 - August 2015). Taught English and promoted cross-cultural understanding.
+
+## Media and press
+
+"This master's degree addresses pioneering techniques in underwater robotics", Periódico
+Mediterráneo, 31 January 2023. A featured interview covering the path into underwater robotics,
+the EMJMD Marine and Maritime Intelligent Robotics (MIR) master's program, and the future of AI
+in underwater applications.
+
+Quote: "I would recommend this program to someone who is really passionate about underwater
+robotics, as I believe this field can be challenging but incredibly rewarding... The challenges
+one faces in this field can be tough, but they are also what make it so interesting and fun."
+
+- Full interview: https://www.master-mir.eu/interview-of-ahmed-elsayed-mir-student/
+- PDF (Spanish): {{ '/assets/media/press/31-1-2023-PeriodicoMediterraneoCastellon.pdf' | absolute_url }}
+
+## Contact
+
+- Email: ahmedharbii10@gmail.com
+- LinkedIn: {{ site.social.linkedin }}
+- GitHub: {{ site.social.github }}
+- Google Scholar: {{ site.social.scholar }}
+- X / Twitter: {{ site.social.twitter }}
+
+Open to research collaborations, research discussions, and opportunities in robotics and AI.
