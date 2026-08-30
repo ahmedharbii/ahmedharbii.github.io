@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ahmedharbii.github.io/sitemap.xml
+
+# Curated plain-text summaries for LLMs and AI answer engines (llmstxt.org)
+# Index:        https://ahmedharbii.github.io/llms.txt
+# Full content: https://ahmedharbii.github.io/llms-full.txt

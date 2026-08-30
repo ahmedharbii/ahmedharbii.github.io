@@ -26,6 +26,9 @@ each page only contains its own content.
 ├── contact.html            # Contact information
 ├── about.html              # About page
 ├── privacy.html            # Privacy policy
+├── llms.txt                # Curated index for AI crawlers (llmstxt.org)
+├── llms-full.txt           # Full site content as one plain-text document
+├── robots.txt              # Crawler rules + sitemap/llms.txt pointers
 ├── assets/
 │   ├── css/styles.css      # Main stylesheet
 │   ├── js/                 # particles.js (background) + site.js (shared behaviour)
@@ -44,6 +47,7 @@ each page only contains its own content.
 - 3D animated shark / killer whale using Three.js
 - Particle background effects (Three.js)
 - SEO optimized with Open Graph tags and JSON-LD structured data
+- `llms.txt` / `llms-full.txt` for generative engine optimization (GEO)
 - Mobile-friendly navigation
 
 ## 🛠️ Local Development
@@ -93,6 +97,21 @@ secret to make that CI run reliable.
 ### Add New Projects
 
 Edit `projects.html` and add project cards with images/videos under `assets/images/projects/`.
+
+### Keep llms.txt in Sync
+
+`llms.txt` and `llms-full.txt` follow the [llmstxt.org](https://llmstxt.org) convention: plain-text
+summaries that let LLMs and AI answer engines read the site without wading through the
+Three.js-heavy HTML. `llms.txt` is a short index of links; `llms-full.txt` carries the whole
+content in one document.
+
+Both are Jekyll pages, so they only appear in the build output, and both render their
+**Publications** section from `_data/publications.yml` — adding a publication there updates them
+automatically. Everything else in `llms-full.txt` (bio, experience, education, projects, service,
+press) is written by hand, so **when you edit `index.html`, `about.html`, or `projects.html`,
+mirror the change in `llms-full.txt`.** `make test` verifies both files exist, are structurally
+valid, contain no unrendered Liquid, use absolute links, and list every publication in the data
+file — but it cannot tell whether the prose is current.
 
 ## 📄 License
 

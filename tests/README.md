@@ -46,6 +46,13 @@ The test suite includes:
    - Verifies viewport meta tags
    - Ensures responsive design setup
 
+7. **llms.txt Tests (AI crawler / GEO)**
+   - Checks `llms.txt` and `llms-full.txt` are built and free of unrendered Liquid
+   - Validates the llmstxt.org structure (single H1, blockquote summary, H2 sections)
+   - Requires absolute links, since crawlers read these files standalone
+   - Confirms both list every publication in `_data/publications.yml`
+   - Confirms `robots.txt` points crawlers at `llms.txt`
+
 ## CI/CD Integration
 
 Tests run automatically on:
