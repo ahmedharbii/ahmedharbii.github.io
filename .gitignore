@@ -16,6 +16,9 @@ _site/
 .jekyll-metadata
 vendor/
 .bundle/
+# Local resolution artifact: GitHub Pages builds from its own gem set, and CI
+# resolves fresh via bundler-cache, so a pinned lockfile here only risks drift.
+Gemfile.lock
 
 # Local Scholar fetch draft (validate, then move entries into publications.yml)
 _data/publications.draft.yml
