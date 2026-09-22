@@ -47,41 +47,13 @@ page_loader: true
 
 <section class="fade-in">
   <h2>Work Experience</h2>
+{%- for job in site.data.experience %}
   <div class="card">
-    <h3>Researcher</h3>
-    <span class="card-meta">DFKI - Germany (Present)</span>
-    <p>Working on Explainable AI in Marine Environments.</p>
+    <h3>{{ job.role }}</h3>
+    <span class="card-meta">{{ job.meta }}</span>
+    <p>{{ job.description }}</p>
   </div>
-  <div class="card">
-    <h3>Computer Vision Intern</h3>
-    <span class="card-meta">Hydromea SA - Switzerland</span>
-    <p>Developed computer vision algorithms for underwater applications.</p>
-  </div>
-  <div class="card">
-    <h3>VSLAM Intern</h3>
-    <span class="card-meta">Cosmer's Lab - France</span>
-    <p>Researched Visual SLAM techniques for maritime environments.</p>
-  </div>
-  <div class="card">
-    <h3>Research Assistant</h3>
-    <span class="card-meta">Nile University - Egypt</span>
-    <p>Research on Underwater Soft Robotics.</p>
-  </div>
-  <div class="card">
-    <h3>Innovation Engineer</h3>
-    <span class="card-meta">Nile University - Egypt</span>
-    <p>Responsible for Innovation Hub Lab and supervising students.</p>
-  </div>
-  <div class="card">
-    <h3>Robotics Instructor</h3>
-    <span class="card-meta">Innova STEM Education - Alexandria, Egypt</span>
-    <p>Taught robotics courses for students ages 6-17, introducing them to fundamental robotics concepts and hands-on projects.</p>
-  </div>
-  <div class="card">
-    <h3>ROV Instructor</h3>
-    <span class="card-meta">Innova STEM Education - Alexandria, Egypt</span>
-    <p>Instructed students on remotely operated vehicle design and operation.</p>
-  </div>
+{%- endfor %}
 </section>
 
 <section class="fade-in">
@@ -148,14 +120,12 @@ page_loader: true
 
 <section class="fade-in">
   <h2>Master Theses Supervised</h2>
+{%- for thesis in site.data.theses %}
   <div class="card">
-    <h3>3D Object-Level Explainability in SONAR Point Cloud Data</h3>
-    <span class="card-meta">FAU Erlangen-Nürnberg | 2026</span>
+    <h3>{{ thesis.title }}</h3>
+    <span class="card-meta">{{ thesis.university }} | {{ thesis.year }}</span>
   </div>
-  <div class="card">
-    <h3>3D Reconstruction and Scene Completion of Bathymetry and Underwater Vegetation from SONAR Pointclouds</h3>
-    <span class="card-meta">Hochschule Bremen | 2026</span>
-  </div>
+{%- endfor %}
 </section>
 
 <section class="fade-in">

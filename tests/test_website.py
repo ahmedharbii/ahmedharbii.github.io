@@ -329,6 +329,49 @@ def test_llms_txt():
     print()
 
 
+def read_data_field(filename, field):
+    """Top-level values of `field` in a _data YAML file, in order.
+
+    Read with a regex rather than PyYAML so the suite keeps running on a bare
+    Python install (CI does not install the fetch script's dependencies).
+    """
+    data_file = Path(__file__).parent.parent / '_data' / filename
+    if not data_file.exists():
+        return []
+    text = data_file.read_text(encoding='utf-8')
+    values = re.findall(rf'^-? *{field}: *(.+?) *$', text, re.MULTILINE)
+    return [v.strip('"\'') for v in values]
+
+
+def test_data_driven_sections():
+    """Test that homepage sections render from their _data/ source files.
+
+    Work experience and supervised theses live in _data/ so the page and the
+    llms.txt files cannot drift apart. If an entry is missing from a rendered
+    file, the template stopped tracking the data.
+    """
+    print("Testing data-driven sections...")
+
+    roles = read_data_field('experience.yml', 'role')
+    assert roles, "_data/experience.yml has no entries"
+    index_html = read_html_file('index.html')
+    llms_full = read_text_file('llms-full.txt')
+    for role in roles:
+        assert role in index_html, f"index.html: missing experience entry {role!r}"
+        assert role in llms_full, f"llms-full.txt: missing experience entry {role!r}"
+    print(f"  \u2713 All {len(roles)} work experience entries render from _data/experience.yml")
+
+    titles = read_data_field('theses.yml', 'title')
+    assert titles, "_data/theses.yml has no entries"
+    llms_index = read_text_file('llms.txt')
+    for title in titles:
+        assert title in index_html, f"index.html: missing thesis {title!r}"
+        assert title in llms_full, f"llms-full.txt: missing thesis {title!r}"
+        assert title in llms_index, f"llms.txt: missing thesis {title!r}"
+    print(f"  \u2713 All {len(titles)} supervised theses render from _data/theses.yml")
+    print()
+
+
 def test_responsive_viewport():
     """Test that pages have responsive viewport meta tag."""
     print("Testing responsive design...")
@@ -361,6 +404,7 @@ def run_all_tests():
         test_no_broken_internal_links()
         test_media_folder_structure()
         test_llms_txt()
+        test_data_driven_sections()
         test_responsive_viewport()
         
         print("=" * 60)

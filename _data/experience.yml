@@ -1,0 +1,37 @@
+# Source of truth for the Work Experience section on the homepage (index.html)
+# and for the same section in llms-full.txt. Edit here, not in either file.
+#
+# Fields:
+#   role         Job title, shown as the card heading
+#   meta         Organisation, location and dates, shown as the card meta line
+#   description  One-line summary of the work
+#
+# Order is newest first; entries render in the order listed.
+
+- role: Researcher
+  meta: DFKI - Germany (Present)
+  description: Working on Explainable AI in Marine Environments.
+
+- role: Computer Vision Intern
+  meta: Hydromea SA - Switzerland
+  description: Developed computer vision algorithms for underwater applications.
+
+- role: VSLAM Intern
+  meta: Cosmer's Lab - France
+  description: Researched Visual SLAM techniques for maritime environments.
+
+- role: Research Assistant
+  meta: Nile University - Egypt
+  description: Research on Underwater Soft Robotics.
+
+- role: Innovation Engineer
+  meta: Nile University - Egypt
+  description: Responsible for Innovation Hub Lab and supervising students.
+
+- role: Robotics Instructor
+  meta: Innova STEM Education - Alexandria, Egypt
+  description: Taught robotics courses for students ages 6-17, introducing them to fundamental robotics concepts and hands-on projects.
+
+- role: ROV Instructor
+  meta: Innova STEM Education - Alexandria, Egypt
+  description: Instructed students on remotely operated vehicle design and operation.

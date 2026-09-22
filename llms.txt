@@ -44,9 +44,9 @@ Name variants used in publications and across the web: Ahmed Harbi Elsayed, Ahme
 - [X / Twitter]({{ site.social.twitter }}): Occasional research updates.
 
 ## Master theses supervised
-
-- 3D Object-Level Explainability in SONAR Point Cloud Data. FAU Erlangen-Nürnberg, 2026.
-- 3D Reconstruction and Scene Completion of Bathymetry and Underwater Vegetation from SONAR Pointclouds. Hochschule Bremen, 2026.
+{% for thesis in site.data.theses %}
+- {{ thesis.title }}. {{ thesis.university }}, {{ thesis.year }}.
+{%- endfor %}
 
 ## Optional
 
