@@ -37,14 +37,9 @@ and the International Journal of Social Robotics.
 - Simulation: Unity-based underwater and robotics simulators.
 
 ## Work experience
-
-- Researcher, DFKI, Germany (present). Explainable AI in marine environments.
-- Computer Vision Intern, Hydromea SA, Switzerland. Computer vision algorithms for underwater applications.
-- VSLAM Intern, COSMER Lab, France. Visual SLAM techniques for maritime environments.
-- Research Assistant, Nile University, Egypt. Underwater soft robotics.
-- Innovation Engineer, Nile University, Egypt. Responsible for the Innovation Hub Lab and supervising students.
-- Robotics Instructor, Innova STEM Education, Alexandria, Egypt. Robotics courses for students ages 6-17.
-- ROV Instructor, Innova STEM Education, Alexandria, Egypt. Remotely operated vehicle design and operation.
+{% for job in site.data.experience %}
+- {{ job.role }}, {{ job.meta }}. {{ job.description }}
+{%- endfor %}
 
 ## Education
 
@@ -127,11 +122,9 @@ Conference reviewer (2024 - present) for:
 - European Conference on Modelling and Simulation (ECMS): 2025, 2026.
 
 ## Master theses supervised
-
-- "3D Object-Level Explainability in SONAR Point Cloud Data". FAU Erlangen-Nürnberg
-  (Friedrich-Alexander-Universität Erlangen-Nürnberg), 2026.
-- "3D Reconstruction and Scene Completion of Bathymetry and Underwater Vegetation from
-  SONAR Pointclouds". Hochschule Bremen, 2026.
+{% for thesis in site.data.theses %}
+- "{{ thesis.title }}". {{ thesis.university }}{% if thesis.university_full %} ({{ thesis.university_full }}){% endif %}, {{ thesis.year }}.
+{%- endfor %}
 
 ## Volunteering
 

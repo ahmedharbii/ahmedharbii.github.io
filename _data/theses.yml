@@ -1,0 +1,20 @@
+# Source of truth for the Master Theses Supervised section on the homepage
+# (index.html), and for the same section in llms.txt and llms-full.txt.
+#
+# Fields:
+#   title            Thesis title
+#   university       Short institution name, shown on the card
+#   university_full  Optional full legal name, used only in llms-full.txt so
+#                    AI crawlers can match either form
+#   year             Year of completion
+#
+# Student names are deliberately not listed.
+
+- title: 3D Object-Level Explainability in SONAR Point Cloud Data
+  university: FAU Erlangen-Nürnberg
+  university_full: Friedrich-Alexander-Universität Erlangen-Nürnberg
+  year: 2026
+
+- title: 3D Reconstruction and Scene Completion of Bathymetry and Underwater Vegetation from SONAR Pointclouds
+  university: Hochschule Bremen
+  year: 2026
