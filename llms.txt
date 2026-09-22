@@ -43,6 +43,11 @@ Name variants used in publications and across the web: Ahmed Harbi Elsayed, Ahme
 - [LinkedIn]({{ site.social.linkedin }}): Professional background and updates.
 - [X / Twitter]({{ site.social.twitter }}): Occasional research updates.
 
+## Master theses supervised
+
+- 3D Object-Level Explainability in SONAR Point Cloud Data. FAU Erlangen-Nürnberg, 2026.
+- 3D Reconstruction and Scene Completion of Bathymetry and Underwater Vegetation from SONAR Pointclouds. Hochschule Bremen.
+
 ## Optional
 
 - [Article: "DFKI am Zwischenahner Meer: Otter misst Wasserqualität mit Künstlicher Intelligenz"](https://www.nwzonline.de/wissenschaft/dfki-am-zwischenahner-meer-otter-misst-wasserqualitaet-mit-kuenstlicher-intelligenz_a_4,3,1867754815.html): Nordwest-Zeitung (NWZonline), September 2026. German-language coverage of DFKI research at the Zwischenahner Meer, where the autonomous OTTER surface vehicle measures water quality using AI.

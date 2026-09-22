@@ -126,6 +126,13 @@ Conference reviewer (2024 - present) for:
 - SGAI International Conference on Artificial Intelligence: 2024, 2025, 2026.
 - European Conference on Modelling and Simulation (ECMS): 2025, 2026.
 
+## Master theses supervised
+
+- "3D Object-Level Explainability in SONAR Point Cloud Data". FAU Erlangen-Nürnberg
+  (Friedrich-Alexander-Universität Erlangen-Nürnberg), 2026.
+- "3D Reconstruction and Scene Completion of Bathymetry and Underwater Vegetation from
+  SONAR Pointclouds". Hochschule Bremen.
+
 ## Volunteering
 
 - Team Member, AIESEC Alexandria, Egypt (November 2015 - February 2017). Contributed to international exchange and leadership development programs.
