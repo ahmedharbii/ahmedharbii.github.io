@@ -131,7 +131,7 @@ Conference reviewer (2024 - present) for:
 - "3D Object-Level Explainability in SONAR Point Cloud Data". FAU Erlangen-Nürnberg
   (Friedrich-Alexander-Universität Erlangen-Nürnberg), 2026.
 - "3D Reconstruction and Scene Completion of Bathymetry and Underwater Vegetation from
-  SONAR Pointclouds". Hochschule Bremen.
+  SONAR Pointclouds". Hochschule Bremen, 2026.
 
 ## Volunteering
 
