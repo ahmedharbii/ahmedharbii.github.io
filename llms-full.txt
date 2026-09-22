@@ -134,6 +134,14 @@ Conference reviewer (2024 - present) for:
 
 ## Media and press
 
+"DFKI am Zwischenahner Meer: Otter misst Wasserqualität mit Künstlicher Intelligenz"
+(English: "DFKI at the Zwischenahner Meer: Otter measures water quality with artificial
+intelligence"), Nordwest-Zeitung (NWZonline), September 2026. German-language coverage of the
+DFKI research at the Zwischenahner Meer, where the autonomous OTTER surface vehicle measures
+water quality using artificial intelligence.
+
+- Article: https://www.nwzonline.de/wissenschaft/dfki-am-zwischenahner-meer-otter-misst-wasserqualitaet-mit-kuenstlicher-intelligenz_a_4,3,1867754815.html
+
 "This master's degree addresses pioneering techniques in underwater robotics", Periódico
 Mediterráneo, 31 January 2023. A featured interview covering the path into underwater robotics,
 the EMJMD Marine and Maritime Intelligent Robotics (MIR) master's program, and the future of AI

@@ -45,6 +45,7 @@ Name variants used in publications and across the web: Ahmed Harbi Elsayed, Ahme
 
 ## Optional
 
+- [Article: "DFKI am Zwischenahner Meer: Otter misst Wasserqualität mit Künstlicher Intelligenz"](https://www.nwzonline.de/wissenschaft/dfki-am-zwischenahner-meer-otter-misst-wasserqualitaet-mit-kuenstlicher-intelligenz_a_4,3,1867754815.html): Nordwest-Zeitung (NWZonline), September 2026. German-language coverage of DFKI research at the Zwischenahner Meer, where the autonomous OTTER surface vehicle measures water quality using AI.
 - [Interview: "This master's degree addresses pioneering techniques in underwater robotics"](https://www.master-mir.eu/interview-of-ahmed-elsayed-mir-student/): Interview in Periódico Mediterráneo (31 January 2023) on underwater robotics and the EMJMD Marine and Maritime Intelligent Robotics program.
 - [Press PDF (Spanish)]({{ '/assets/media/press/31-1-2023-PeriodicoMediterraneoCastellon.pdf' | absolute_url }}): Scan of the printed Periódico Mediterráneo interview.
 - [Privacy policy]({{ '/privacy.html' | absolute_url }}): How this site handles visitor information.
