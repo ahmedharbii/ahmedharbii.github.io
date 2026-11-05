@@ -19,8 +19,10 @@ each page only contains its own content.
 │   └── default.html        # Shared page shell
 ├── _includes/              # head, nav, footer, scripts, 3D creature modules
 ├── _data/
-│   └── publications.yml    # Source of truth for the Publications page
-├── index.html              # Homepage (content + front matter)
+│   ├── publications.yml    # Source of truth for the Publications page
+│   ├── experience.yml      # Source of truth for Work Experience (homepage)
+│   └── theses.yml          # Source of truth for supervised master theses
+├── index.html              # Homepage (renders experience + theses from _data/)
 ├── projects.html           # Projects showcase
 ├── publications.html       # Renders cards + JSON-LD from _data/publications.yml
 ├── contact.html            # Contact information
@@ -94,6 +96,17 @@ is most reliable run locally. A monthly GitHub Action
 check and opens a Pull Request with any new entries; add a `SERPAPI_KEY` repository
 secret to make that CI run reliable.
 
+### Update Work Experience or Supervised Theses
+
+Both render from `_data/` into the homepage **and** `llms.txt`/`llms-full.txt`, so add or edit an
+entry in one place only:
+
+- `_data/experience.yml` — `role`, `meta` (organisation, location, dates) and `description`.
+- `_data/theses.yml` — `title`, `university`, optional `university_full`, and `year`.
+  Student names are deliberately not listed.
+
+Entries render in file order, newest first.
+
 ### Add New Projects
 
 Edit `projects.html` and add project cards with images/videos under `assets/images/projects/`.
@@ -105,13 +118,18 @@ summaries that let LLMs and AI answer engines read the site without wading throu
 Three.js-heavy HTML. `llms.txt` is a short index of links; `llms-full.txt` carries the whole
 content in one document.
 
-Both are Jekyll pages, so they only appear in the build output, and both render their
-**Publications** section from `_data/publications.yml` — adding a publication there updates them
-automatically. Everything else in `llms-full.txt` (bio, experience, education, projects, service,
-press) is written by hand, so **when you edit `index.html`, `about.html`, or `projects.html`,
-mirror the change in `llms-full.txt`.** `make test` verifies both files exist, are structurally
-valid, contain no unrendered Liquid, use absolute links, and list every publication in the data
-file — but it cannot tell whether the prose is current.
+Both are Jekyll pages, so they only appear in the build output. Anything sourced from `_data/`
+stays in sync automatically — **publications** (`publications.yml`), **work experience**
+(`experience.yml`) and **supervised theses** (`theses.yml`) are written once and rendered into
+the homepage and the llms files alike.
+
+The remaining prose in `llms-full.txt` (bio, education, projects, academic service, press) is
+still written by hand, so **when you edit those parts of `index.html`, `about.html`, or
+`projects.html`, mirror the change in `llms-full.txt`.**
+
+`make test` verifies both files exist, are structurally valid, contain no unrendered Liquid, use
+absolute links, and that every publication, experience entry and thesis in `_data/` actually
+renders — but it cannot tell whether the hand-written prose is current.
 
 ## 📄 License
 
