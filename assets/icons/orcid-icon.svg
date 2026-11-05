@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ORCID iD icon, drawn as vectors so the "iD" renders without depending on
+     any installed font. Brand green per ORCID's identity guidelines. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="ORCID">
+  <circle cx="128" cy="128" r="128" fill="#A6CE39"/>
+  <g fill="#FFFFFF" transform="translate(-8,0)">
+    <circle cx="88" cy="76" r="12"/>
+    <rect x="78" y="98" width="20" height="82"/>
+    <path fill-rule="evenodd" d="M118 98 H152 A41 41 0 0 1 152 180 H118 Z
+                                 M140 120 H146 A19 19 0 0 1 146 158 H140 Z"/>
+  </g>
+</svg>

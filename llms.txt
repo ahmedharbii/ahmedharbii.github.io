@@ -39,6 +39,7 @@ Name variants used in publications and across the web: Ahmed Harbi Elsayed, Ahme
 ## Profiles
 
 - [Google Scholar]({{ site.social.scholar }}): Citation record and full publication list.
+- [ORCID]({{ site.social.orcid }}): Persistent researcher identifier (0009-0007-9094-3238), linking all published work to this author.
 - [GitHub]({{ site.social.github }}): Open-source robotics and computer vision code.
 - [LinkedIn]({{ site.social.linkedin }}): Professional background and updates.
 - [X / Twitter]({{ site.social.twitter }}): Occasional research updates.

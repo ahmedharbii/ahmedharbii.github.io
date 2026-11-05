@@ -160,6 +160,7 @@ one faces in this field can be tough, but they are also what make it so interest
 - LinkedIn: {{ site.social.linkedin }}
 - GitHub: {{ site.social.github }}
 - Google Scholar: {{ site.social.scholar }}
+- ORCID: {{ site.social.orcid }}
 - X / Twitter: {{ site.social.twitter }}
 
 Open to research collaborations, research discussions, and opportunities in robotics and AI.
